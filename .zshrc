@@ -33,5 +33,9 @@ alias size="du -sh"
 alias offline='unshare -r -n'
 alias dir='dir --color=auto'
 alias ls='ls --color=auto'
-alias i3config='vim ~/.config/i3/config'
+alias vim='nvim'
+alias i3config='nvim ~/.config/i3/config'
 setopt AUTO_CD
+alias yay="paru"
+alias history="cat ~/.zsh_history"
+alias bluesink='pacmd set-default-sink $(pacmd list-sinks | grep "<bluez_sink" | cut -c9- | tr -d ">")'

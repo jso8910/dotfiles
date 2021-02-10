@@ -42,7 +42,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty 
+bindsym $mod+Return exec --no-startup-id alacritty 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -147,7 +147,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -157,16 +157,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym j resize shrink width 5 px or 5 ppt
+        bindsym k resize grow height 5 px or 5 ppt
+        bindsym l resize shrink height 5 px or 5 ppt
+        bindsym h rezise grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Right resize shrink width 10 px or 10 ppt
+        bindsym Up resize grow height 10 px or 10 ppt
+        bindsym Down resize shrink height 10 px or 10 ppt
+        bindsym Left resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -191,28 +191,39 @@ exec --no-startup-id feh --bg-fill /home/jason/Pictures/Wallpapers/wallpaper.png
 bindsym Mod1+Right workspace next
 bindsym Mod1+Left workspace prev
 # Start dunst
-exec dunst
+exec --no-startup-id dunst
 
 # Sreen brightness controls with light
-bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-statup-id light -A 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10 # decrease screen brightness
 
 # Polybar
 # Themes: https://github.com/adi1090x/polybar-themes
 
-exec --no-startup-id bash ~/.config/polybar/launch.sh --hack  
+exec --no-startup-id bash ~/.config/polybar/launch.sh  
 # Picom
 exec --no-startup-id picom --config /home/jason/.config/picom/picom.conf
 
 # Some more stuff
-bindsym Mod1+Tab exec i3-alt-tab --next
-bindsym Mod1+Shift+Tab exec i3-alt-tab --prev
+bindsym Mod1+Tab exec --no-startup-id i3-alt-tab --next
+bindsym Mod1+Shift+Tab exec --no-startup-id i3-alt-tab --prev
 # Sensitivity because for some reason X11 config wasn't working	
 exec --no-startup-id xinput set-prop "TPPS/2 Elan TrackPoint" "libinput Accel Speed" 0
 # Rofi
-bindsym $mod+d exec rofi -show drun
-bindsym $mod+Shift+slash exec rofi -show keys
-bindsym $mod+Shift+g exec rofi -show file-browser
+bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+Shift+slash exec --no-startup-id rofi -show keys
+bindsym $mod+Shift+g exec --no-startup-id rofi -show file-browser
 # More stuff
 exec --no-startup-id xrandr --output eDP --set TearFree on   
 exec --no-startup-id input set-prop "SynPS/2 Synaptics TouchPad" "libinput Accel Speed" 0.6
+
+exec --no-startup-id blueman-manager 
+
+
+#bindsym $mod+Ctrl+Right resize shrink width 1 px or 1 ppt
+#bindsym $mod+Ctrl+Up resize grow height 1 px or 1 ppt
+#bindsym $mod+Ctrl+Down resize shrink height 1 px or 1 ppt
+#bindsym $mod+Ctrl+Left resize grow width 1 px or 1 ppt
+
+exec --no-startup-id pulseaudio-equalizer enable
+exec --no-startup-id mopidy
