@@ -24,7 +24,7 @@ font pango:monospace 8
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- swaylock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -185,38 +185,28 @@ for_window [class=".*"] border pixel 0
 exec --no-startup-id i3 border pixel 2 
 gaps inner 8
 gaps outer 8 
-exec --no-startup-id feh --bg-fill /home/jason/Pictures/Wallpapers/wallpaper.png
+exec swaybg -i ~/Pictures/Wallpapers/wallpaper.png   
 
 # Next/previous workspace
 bindsym Mod1+Right workspace next
 bindsym Mod1+Left workspace prev
-# Start dunst
-exec --no-startup-id dunst
 
 # Sreen brightness controls with light
-bindsym XF86MonBrightnessUp exec --no-statup-id light -A 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec light -A 10 
+bindsym XF86MonBrightnessDown exec light -U 10
 
-# Polybar
-# Themes: https://github.com/adi1090x/polybar-themes
+exec waybar
 
-exec --no-startup-id bash ~/.config/polybar/launch.sh  
-# Picom
-exec --no-startup-id picom --experimental-backends --backend glx --config /home/jason/.config/picom/picom.conf
-
-# Some more stuff
-bindsym Mod1+Tab exec --no-startup-id i3-alt-tab --next
-bindsym Mod1+Shift+Tab exec --no-startup-id i3-alt-tab --prev
 # Sensitivity because for some reason X11 config wasn't working	
-exec --no-startup-id xinput set-prop "TPPS/2 Elan TrackPoint" "libinput Accel Speed" 0
 # Rofi
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+Shift+slash exec --no-startup-id rofi -show keys
 bindsym $mod+Shift+g exec --no-startup-id rofi -show file-browser
 # More stuff
-exec --no-startup-id xrandr --output eDP --set TearFree on   
-exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Accel Speed" 0.6
-
+input 2:10:TPPS/2_Elan_TrackPoint natural_scroll enabled
+input type:touchpad natural_scroll enabled 
+input type:touchpad accel_profile adaptive
+input type:touchpad pointer_accel 0.5
 exec --no-startup-id blueman-manager 
 
 
@@ -228,3 +218,30 @@ exec --no-startup-id blueman-manager
 #exec --no-startup-id pulseaudio-equalizer enable
 exec --no-startup-id mopidy
 
+set $gnome-schema org.gnome.desktop.interface
+
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Dracula'
+    gsettings set $gnome-schema cursor-theme 'macOSBigSur'
+    gsettings set $gnome-schema cursor-theme-size '24'
+    gsettings set $gnome-schema font-name 'Sans Serif,  10'
+}
+
+exec swayidle -w\
+    timeout 1070 'swaylock -f'\
+    timeout 770 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    after-resume 'swaylock'
+
+exec mako
+exec python3 ~/fader.py
+
+bindsym Print+Shift exec grimshot copy active
+bindsym Print       exec grimshot copy area
+bindsym Print+Mod1  exec grimshot copy output
+bindsym Print+Ctrl  exec grimshot copy window
+
+
+
+
+bindsym $mod+Shift+f floating toggle

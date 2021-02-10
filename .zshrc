@@ -39,3 +39,6 @@ setopt AUTO_CD
 alias yay="paru"
 alias history="cat ~/.zsh_history"
 alias bluesink='pacmd set-default-sink $(pacmd list-sinks | grep "<bluez_sink" | cut -c9- | tr -d ">")'
+export EDITOR=nvim
+alias swayconfig="nvim ~/.config/sway/config"
+alias obs="QT_QPA_PLATFORM=xcb obs"
