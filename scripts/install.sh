@@ -26,7 +26,7 @@ function check_answer {
 function install_pkg {
 	paru -S $@ --needed --noconfirm
 }
-
+cd ..
 
 print 'Generating pkgfile for command-not-found support'
 install_pkg pkgfile
@@ -43,7 +43,7 @@ install_pkg sddm
 sudo systemctl enable sddm
 
 print 'Installing Dracula theme'
-cp ../.themes/Dracula ~/.themes/
+cp -aR .themes/Dracula ~/.themes/
 print 'If you want qt apps to use the theme, look that up because I sure cant be bothered to'
 print 'This script assumes you will only use sway. I have not modified the settings file of gnome because wayland (and therefore sway) doesnt honor it. Make sure to change the settings if you switch off of sway'
 
@@ -51,7 +51,7 @@ print 'Installing nvim config and nvim'
 install_pkg neovim
 mkdir -p ~/.config/nvim
 rm -rf ~/.config/nvim/*
-cp ../.config/nvim/init.vim ~/.config/nvim/
+cp -aR .config/nvim/init.vim ~/.config/nvim/
 
 print 'Installing python3 and pip'
 install_pkg python3 python-pip
@@ -59,20 +59,6 @@ install_pkg python3 python-pip
 print 'Installing vlc'
 install_pkg vlc
 
-print 'Installing nerd-fonts-complete'
-#install_pkg wget 
-#install_pkg nerd-fonts-complete
-install_pkg wget megatools-bin
-mkdir -p build
-cd build
-#git clone https://aur.archlinux.org/nerd-fonts-complete.git
-rm -rf nerd-fonts-complete
-yay --getpkgbuild nerd-fonts-complete
-cd nerd-fonts-complete
-#wget -O nerd-fonts-2.1.0.tar.gz https://github.com/ryanoasis/nerd-fonts/archive/v2.1.0.tar.gz
-megatools dl --no-ask-password https://mega.nz/file/4Ml2ySAA#QwjihnwU0waglPXocRrQ8jtYvXz1mFBmbp08Ux12BQU
-makepkg -sci BUILDDIR=.
-cd ../..
 
 
 print 'Installing coding stuff'
@@ -84,7 +70,7 @@ install_pkg btm tldr light i3-volume mako swaybg mopidy ncmpcpp swayidle swayloc
 print 'Installing sway config'
 mkdir -p ~/.config/sway
 rm -rf ~/.config/sway/*
-cp ../.config/sway/config ~/.config/sway/
+cp -aR .config/sway/config ~/.config/sway/
 print 'You can put your wallpaper in /Pictures/Wallpapers/wallpaper.png'
 print 'You can put a blurred version of your wallpaper (for swaylock) in /Pictures/Wallpapers/blurredwallpaper.png'
 
@@ -92,7 +78,7 @@ print 'Installing rofi config and rofi'
 install_pkg rofi
 mkdir -p ~/.config/rofi
 rm -rf ~/.config/rofi/*
-cp ../.config/rofi/* ~/.config/rofi/
+cp -aR .config/rofi/ ~/.config/rofi/
 
 print 'Installing alacritty config and alacritty'
 install_pkg alacritty
@@ -101,5 +87,5 @@ print 'Installing waybar config and waybar'
 install_pkg waybar
 mkdir -p ~/.config/waybar
 rm -rf ~/.config/waybar/*
-cp ../.config/waybar/* ~/.config/waybar/
+cp -aR .config/waybar/ ~/.config/waybar/
 
