@@ -62,14 +62,14 @@ install_pkg vlc
 print 'Installing nerd-fonts-complete'
 #install_pkg wget 
 #install_pkg nerd-fonts-complete
-install_pkg wget
+install_pkg wget megatools-bin
 mkdir -p build
 cd build
 #git clone https://aur.archlinux.org/nerd-fonts-complete.git
 yay --getpkgbuild nerd-fonts-complete
 cd nerd-fonts-complete
-wget -O nerd-fonts-2.1.0.tar.gz https://github.com/ryanoasis/nerd-fonts/archive/v2.1.0.tar.gz
-
+#wget -O nerd-fonts-2.1.0.tar.gz https://github.com/ryanoasis/nerd-fonts/archive/v2.1.0.tar.gz
+megatools dl --no-ask-password https://mega.nz/file/4Ml2ySAA#QwjihnwU0waglPXocRrQ8jtYvXz1mFBmbp08Ux12BQU
 makepkg -sci BUILDDIR=.
 
 
