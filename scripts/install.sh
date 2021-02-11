@@ -64,7 +64,7 @@ print 'Installing coding stuff'
 install_pkg code jetbrains-toolbox
 
 print 'Installing misc stuff'
-install_pkg btm tldr light i3-volume mako swaybg mopidy ncmpcpp swayidle swaylock grimshot
+install_pkg bottom tldr light i3-volume mako swaybg mopidy ncmpcpp swayidle swaylock grimshot
 mkdir -p ~/.config
 print 'Installing sway config'
 rm -rf ~/.config/sway/
