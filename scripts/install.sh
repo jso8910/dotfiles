@@ -66,12 +66,14 @@ print 'Installing coding stuff'
 install_pkg code jetbrains-toolbox
 
 print 'Installing misc stuff'
-install_pkg btm tldr
+install_pkg btm tldr light i3-volume mako swaybg mopidy ncmpcpp swayidle swaylock grimshot
 
 print 'Installing sway config'
 mkdir -p ~/.config/sway
 rm -rf ~/.config/sway/*
 cp ../.config/sway/config ~/.config/sway/
+print 'You can put your wallpaper in /Pictures/Wallpapers/wallpaper.png'
+print 'You can put a blurred version of your wallpaper (for swaylock) in /Pictures/Wallpapers/blurredwallpaper.png'
 
 print 'Installing rofi config and rofi'
 install_pkg rofi

@@ -235,7 +235,6 @@ exec swayidle -w\
     after-resume 'swaylock -i ~/Pictures/Wallpapers/blurredwallpaper.png'
 
 exec mako
-exec python3 ~/fader.py
 
 bindsym Print+Shift exec grimshot copy active
 bindsym Print       exec grimshot copy area
