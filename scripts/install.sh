@@ -60,13 +60,14 @@ print 'Installing vlc'
 install_pkg vlc
 
 print 'Installing nerd-fonts-complete'
-#install_pkg nerd-fonts-complete
-mkdir -p build
-cd build
-git clone https://aur.archlinux.org/nerd-fonts-complete.git
-cd nerd-fonts-complete
-wget -O nerd-fonts-2.1.0.tar.gz https://github.com/ryanoasis/nerd-fonts/archive/v2.1.0.tar.gz
-makepkg -sci BUILDDIR=.
+install_pkg nerd-fonts-complete
+#install_pkg wget
+#mkdir -p build
+#cd build
+#git clone https://aur.archlinux.org/nerd-fonts-complete.git
+#cd nerd-fonts-complete
+#wget -O nerd-fonts-2.1.0.tar.gz https://github.com/ryanoasis/nerd-fonts/archive/v2.1.0.tar.gz
+#makepkg -sci BUILDDIR=.
 
 
 print 'Installing coding stuff'
