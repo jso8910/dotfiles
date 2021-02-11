@@ -51,7 +51,7 @@ print 'Installing nvim config and nvim'
 install_pkg neovim
 mkdir -p ~/.config/nvim
 rm -rf ~/.config/nvim/*
-cp -aR .config/nvim/ ~/.config/nvim/
+cp -aR .config/nvim/vim.init ~/.config/nvim/
 
 print 'Installing python3 and pip'
 install_pkg python3 python-pip
@@ -84,7 +84,7 @@ print 'Installing alacritty config and alacritty'
 install_pkg alacritty
 mkdir -p ~/.config/alacritty
 rm -rf ~/.config/alacritty/*
-cp -aR .config/alacritty/ ~/.config/rofi/
+cp -aR .config/alacritty/alacritty.yml ~/.config/rofi/
 
 print 'Installing waybar config and waybar'
 install_pkg waybar
