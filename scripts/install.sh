@@ -47,8 +47,11 @@ cp ../.themes/Dracula ~/.themes/
 print 'If you want qt apps to use the theme, look that up because I sure cant be bothered to'
 print 'This script assumes you will only use sway. I have not modified the settings file of gnome because wayland (and therefore sway) doesnt honor it. Make sure to change the settings if you switch off of sway'
 
-print 'Installing nvim'
+print 'Installing nvim config and nvim'
 install_pkg neovim
+mkdir -p ~/.config/nvim
+rm -rf ~/.config/nvim/*
+cp ../.config/nvim/init.vim ~/.config/nvim/
 
 print 'Installing python3 and pip'
 install_pkg python3 python-pip
@@ -58,6 +61,9 @@ install_pkg vlc
 
 print 'Installing nerd-fonts-complete'
 install_pkg nerd-fonts-complete
+
+print 'Installing coding stuff'
+install_pkg code jetbrains-toolbox
 
 print 'Installing misc stuff'
 install_pkg btm tldr
@@ -81,5 +87,4 @@ install_pkg waybar
 mkdir -p ~/.config/waybar
 rm -rf ~/.config/waybar/*
 cp ../.config/waybar/* ~/.config/waybar/
-
 
