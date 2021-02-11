@@ -51,7 +51,7 @@ print 'Installing nvim config and nvim'
 install_pkg neovim
 mkdir -p ~/.config/nvim
 rm -rf ~/.config/nvim/*
-cp -aR .config/nvim/vim.init ~/.config/nvim/
+cp -aR .config/nvim/ ~/.config/
 
 print 'Installing python3 and pip'
 install_pkg python3 python-pip
@@ -66,29 +66,25 @@ install_pkg code jetbrains-toolbox
 
 print 'Installing misc stuff'
 install_pkg btm tldr light i3-volume mako swaybg mopidy ncmpcpp swayidle swaylock grimshot
-
+mkdir -p ~/.config
 print 'Installing sway config'
-mkdir -p ~/.config/sway
-rm -rf ~/.config/sway/*
-cp -aR .config/sway/ ~/.config/sway/
+rm -rf ~/.config/sway/
+cp -aR .config/sway/ ~/.config/
 print 'You can put your wallpaper in /Pictures/Wallpapers/wallpaper.png'
 print 'You can put a blurred version of your wallpaper (for swaylock) in /Pictures/Wallpapers/blurredwallpaper.png'
 
 print 'Installing rofi config and rofi'
 install_pkg rofi
-mkdir -p ~/.config/rofi
-rm -rf ~/.config/rofi/*
-cp -aR .config/rofi/ ~/.config/rofi/
+rm -rf ~/.config/rofi/
+cp -aR .config/rofi/ ~/.config/
 
 print 'Installing alacritty config and alacritty'
 install_pkg alacritty
-mkdir -p ~/.config/alacritty
-rm -rf ~/.config/alacritty/*
-cp -aR .config/alacritty/alacritty.yml ~/.config/rofi/
+rm -rf ~/.config/alacritty/
+cp -aR .config/alacritty/ ~/.config/
 
 print 'Installing waybar config and waybar'
 install_pkg waybar
-mkdir -p ~/.config/waybar
-rm -rf ~/.config/waybar/*
-cp -aR .config/waybar/ ~/.config/waybar/
+rm -rf ~/.config/waybar/
+cp -aR .config/waybar/ ~/.config/
 
