@@ -49,8 +49,7 @@ print 'This script assumes you will only use sway. I have not modified the setti
 
 print 'Installing nvim config and nvim'
 install_pkg neovim
-mkdir -p ~/.config/nvim
-rm -rf ~/.config/nvim/*
+rm -rf ~/.config/nvim/
 cp -aR .config/nvim/ ~/.config/
 
 print 'Installing python3 and pip'
