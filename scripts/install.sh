@@ -61,7 +61,7 @@ install_pkg vlc
 
 print 'Installing nerd-fonts-complete'
 #install_pkg nerd-fonts-complete
-mkdir build
+mkdir -p build
 cd build
 git clone https://aur.archlinux.org/nerd-fonts-complete.git
 cd nerd-fonts-complete
