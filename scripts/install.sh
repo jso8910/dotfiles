@@ -69,8 +69,9 @@ mkdir -p ~/.config
 print 'Installing sway config'
 rm -rf ~/.config/sway/
 cp -aR .config/sway/ ~/.config/
-print 'You can put your wallpaper in /Pictures/Wallpapers/wallpaper.png'
-print 'You can put a blurred version of your wallpaper (for swaylock) in /Pictures/Wallpapers/blurredwallpaper.png'
+print 'You can put your wallpaper in ~/Pictures/Wallpapers/wallpaper.png'
+print 'You can put a blurred version of your wallpaper (for swaylock) in ~/Pictures/Wallpapers/blurredwallpaper.png'
+print 'Optionally, my wallpapers are in this repo (relative path Pictures/Wallpapers) and you can copy those (blurred and normal) to the wallpapers dir'
 
 print 'Installing rofi config and rofi'
 install_pkg rofi
