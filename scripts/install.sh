@@ -60,6 +60,7 @@ print 'Installing vlc'
 install_pkg vlc
 
 print 'Installing nerd-fonts-complete'
+install_pkg wget 
 install_pkg nerd-fonts-complete
 #install_pkg wget
 #mkdir -p build
