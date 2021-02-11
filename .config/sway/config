@@ -204,6 +204,7 @@ bindsym $mod+Shift+slash exec --no-startup-id rofi -show keys
 bindsym $mod+Shift+g exec --no-startup-id rofi -show file-browser
 # More stuff
 input 2:10:TPPS/2_Elan_TrackPoint natural_scroll enabled
+input 2:10:TPPS/2_Elan_TrackPoint pointer_accel 0 
 input type:touchpad natural_scroll enabled 
 input type:touchpad accel_profile adaptive
 input type:touchpad pointer_accel 0.5
@@ -228,10 +229,10 @@ exec_always {
 }
 
 exec swayidle -w\
-    timeout 1070 'swaylock -f'\
+    timeout 1070 'swaylock -i ~/Pictures/Wallpapers/blurredwallpaper.png'\
     timeout 770 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
-    after-resume 'swaylock'
+    after-resume 'swaylock -i ~/Pictures/Wallpapers/blurredwallpaper.png'
 
 exec mako
 exec python3 ~/fader.py
