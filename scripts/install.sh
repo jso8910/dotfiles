@@ -72,6 +72,7 @@ cd nerd-fonts-complete
 #wget -O nerd-fonts-2.1.0.tar.gz https://github.com/ryanoasis/nerd-fonts/archive/v2.1.0.tar.gz
 megatools dl --no-ask-password https://mega.nz/file/4Ml2ySAA#QwjihnwU0waglPXocRrQ8jtYvXz1mFBmbp08Ux12BQU
 makepkg -sci BUILDDIR=.
+cd ../..
 
 
 print 'Installing coding stuff'
