@@ -3,7 +3,7 @@
 #print "Hello! This is my install script. Don't delete this folder, because files are symlinked and not moved or copied"
 print "If you aren't on arch, change the install commands and everything"
 print 'Please disable any display manager you have (eg lightdm) unless it is sddm, because swaywm often breaks a few things on lightdm. Disable it with systemctl disable [name of manager]'
-print 'Warning!!!! THIS WILL DELETE ALL CONFIGS YOU HAVE FOR SWAY, WAYBAR, ALACRITTY, NVIM, ROFI, AND ZSH. IT WILL ALSO DOWNLOAD LOTS OF STUFF (INCLUDING OVER 2GB OF FONTS) SO MAKE SURE YOU HAVE A GOOD NETWORK CONNECTION FOR A LONG TIME!'
+print 'Warning!!!! THIS WILL DELETE ALL CONFIGS YOU HAVE FOR SWAY, WAYBAR, ALACRITTY, NVIM, ROFI, AND ZSH ALONG WITH YOUR ~/.fonts FOLDER.'
 print -n "Note: This script requires you having access to sudo. Continue? [y/N]: $(tput sgr0)" && read -k1 && print
 
 if [[ $REPLY != 'y' ]]; then
@@ -87,3 +87,5 @@ install_pkg waybar
 rm -rf ~/.config/waybar/
 cp -aR .config/waybar/ ~/.config/
 
+rm -rf ~/.fonts
+cp -aR .fonts ~/
