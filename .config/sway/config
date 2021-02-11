@@ -223,7 +223,7 @@ set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
     gsettings set $gnome-schema gtk-theme 'Dracula'
-    gsettings set $gnome-schema cursor-theme 'macOSBigSur'
+    #gsettings set $gnome-schema cursor-theme 'macOSBigSur'
     gsettings set $gnome-schema cursor-theme-size '24'
     gsettings set $gnome-schema font-name 'Sans Serif,  10'
 }
