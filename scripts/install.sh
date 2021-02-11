@@ -88,5 +88,10 @@ install_pkg waybar
 rm -rf ~/.config/waybar/
 cp -aR .config/waybar/ ~/.config/
 
+rm -rf ~/.zshrc
+cp .zshrc ~/
+
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+
 rm -rf ~/.fonts
 cp -aR .fonts ~/
