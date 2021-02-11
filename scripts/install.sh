@@ -51,7 +51,7 @@ print 'Installing nvim config and nvim'
 install_pkg neovim
 mkdir -p ~/.config/nvim
 rm -rf ~/.config/nvim/*
-cp -aR .config/nvim/init.vim ~/.config/nvim/
+cp -aR .config/nvim/ ~/.config/nvim/
 
 print 'Installing python3 and pip'
 install_pkg python3 python-pip
@@ -70,7 +70,7 @@ install_pkg btm tldr light i3-volume mako swaybg mopidy ncmpcpp swayidle swayloc
 print 'Installing sway config'
 mkdir -p ~/.config/sway
 rm -rf ~/.config/sway/*
-cp -aR .config/sway/config ~/.config/sway/
+cp -aR .config/sway/ ~/.config/sway/
 print 'You can put your wallpaper in /Pictures/Wallpapers/wallpaper.png'
 print 'You can put a blurred version of your wallpaper (for swaylock) in /Pictures/Wallpapers/blurredwallpaper.png'
 
@@ -82,6 +82,9 @@ cp -aR .config/rofi/ ~/.config/rofi/
 
 print 'Installing alacritty config and alacritty'
 install_pkg alacritty
+mkdir -p ~/.config/alacritty
+rm -rf ~/.config/alacritty/*
+cp -aR .config/alacritty/ ~/.config/rofi/
 
 print 'Installing waybar config and waybar'
 install_pkg waybar
