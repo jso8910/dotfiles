@@ -66,6 +66,7 @@ install_pkg wget megatools-bin
 mkdir -p build
 cd build
 #git clone https://aur.archlinux.org/nerd-fonts-complete.git
+rm -rf nerd-fonts-complete
 yay --getpkgbuild nerd-fonts-complete
 cd nerd-fonts-complete
 #wget -O nerd-fonts-2.1.0.tar.gz https://github.com/ryanoasis/nerd-fonts/archive/v2.1.0.tar.gz
