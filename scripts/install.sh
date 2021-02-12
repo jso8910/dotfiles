@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
 
-#print "Hello! This is my install script. Don't delete this folder, because files are symlinked and not moved or copied"
+
 print "If you aren't on arch, change the install commands and everything"
 print 'Please disable any display manager you have (eg lightdm) unless it is sddm, because swaywm often breaks a few things on lightdm. Disable it with systemctl disable [name of manager]'
 print 'Warning!!!! THIS WILL DELETE ALL CONFIGS YOU HAVE FOR SWAY, WAYBAR, ALACRITTY, NVIM, ROFI, AND ZSH ALONG WITH YOUR ~/.fonts FOLDER.'
@@ -42,56 +42,34 @@ print 'Installing sddm and enabling'
 install_pkg sddm
 sudo systemctl enable sddm
 
-print 'Installing Dracula theme'
-cp -aR .themes/Dracula ~/.themes/
-print 'If you want qt apps to use the theme, look that up because I sure cant be bothered to'
-print 'This script assumes you will only use sway. I have not modified the settings file of gnome because wayland (and therefore sway) doesnt honor it. Make sure to change the settings if you switch off of sway'
-
-print 'Installing nvim config and nvim'
+print 'Installing nvim'
 install_pkg neovim
-rm -rf ~/.config/nvim/
-cp -aR .config/nvim/ ~/.config/
 
-print 'Installing python3 and pip'
+print 'Installing python3 and pip' 
 install_pkg python3 python-pip
 
 print 'Installing vlc'
 install_pkg vlc
 
-
-
 print 'Installing coding stuff'
 install_pkg code jetbrains-toolbox
 
 print 'Installing misc stuff'
-install_pkg bottom tldr light i3-volume mako swaybg mopidy ncmpcpp swayidle swaylock grimshot
-mkdir -p ~/.config
-print 'Installing sway config'
-rm -rf ~/.config/sway/
-cp -aR .config/sway/ ~/.config/
-print 'You can put your wallpaper in ~/Pictures/Wallpapers/wallpaper.png'
-print 'You can put a blurred version of your wallpaper (for swaylock) in ~/Pictures/Wallpapers/blurredwallpaper.png'
-print 'Optionally, my wallpapers are in this repo (relative path Pictures/Wallpapers) and you can copy those (blurred and normal) to the wallpapers dir'
+install_pkg bottom tldr light i3-volume mako swaybg mopidy mcpcpp swayidle swaylock grimshot
 
-print 'Installing rofi config and rofi'
+print 'Installing rofi'
 install_pkg rofi
-rm -rf ~/.config/rofi/
-cp -aR .config/rofi/ ~/.config/
 
-print 'Installing alacritty config and alacritty'
+print 'Installing alacritty'
 install_pkg alacritty
-rm -rf ~/.config/alacritty/
-cp -aR .config/alacritty/ ~/.config/
 
-print 'Installing waybar config and waybar'
+print 'Installing waybar'
 install_pkg waybar
-rm -rf ~/.config/waybar/
-cp -aR .config/waybar/ ~/.config/
-
-rm -rf ~/.zshrc
-cp .zshrc ~/
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 
-rm -rf ~/.fonts
-cp -aR .fonts ~/
+print 'Installing yadm'
+install_pkg yadm
+
+print 'Cloning yadm'
+yadm clone --no-bootstrap -f https://github.com/jso8910/dotfiles

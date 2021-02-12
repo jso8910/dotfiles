@@ -130,6 +130,28 @@
 		},
 		"on-click-right": "swaylock -eFfki ~/.config/lockscreen-origin.png"
 	},
+	"battery#bat1": {
+		"bat": "BAT1"
+	},
+	"idle_inhibitor": {
+		"format": "<span color='#589df6'>{icon}</span>",
+		"format-icons": {
+			"activated": "",
+			"deactivated": ""
+		},
+		"on-click-right": "swaylock -eFfki ~/.config/lockscreen-origin.png"
+	},
+	"battery#bat0": {
+		"bat": "BAT0"
+	},
+	"idle_inhibitor": {
+		"format": "<span color='#589df6'>{icon}</span>",
+		"format-icons": {
+			"activated": "",
+			"deactivated": ""
+		},
+		"on-click-right": "swaylock -eFfki ~/.config/lockscreen-origin.png"
+	},
 	"tray": {
 		// "icon-size": 21,
 		"spacing": 10
