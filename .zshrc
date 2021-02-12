@@ -34,7 +34,6 @@ alias offline='unshare -r -n'
 alias dir='dir --color=auto'
 alias ls='ls --color=auto'
 alias vim='nvim'
-alias i3config='nvim ~/.config/i3/config'
 setopt AUTO_CD
 alias yay="paru"
 alias history="cat ~/.zsh_history"
