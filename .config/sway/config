@@ -145,7 +145,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r reload 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
@@ -204,7 +204,8 @@ bindsym $mod+Shift+slash exec --no-startup-id rofi -show keys
 bindsym $mod+Shift+g exec --no-startup-id rofi -show file-browser
 # More stuff
 input 2:10:TPPS/2_Elan_TrackPoint natural_scroll enabled
-input 2:10:TPPS/2_Elan_TrackPoint pointer_accel 0 
+input 2:10:TPPS/2_Elan_TrackPoint pointer_accel -0.3 
+input 2:10:TPPS/2_Elan_TrackPoint accel_profile adaptive 
 input type:touchpad natural_scroll enabled 
 input type:touchpad accel_profile adaptive
 input type:touchpad pointer_accel 0.5
