@@ -4,9 +4,9 @@
         "layer": "top",
         "position": "top",
         "height": 30,
-        "modules-left": ["battery#bat1", "battery#bat2", "disk", "memory", "cpu", "temperature", "pulseaudio", "backlight", "idle_inhibitor"],
+        "modules-left": ["sway/workspaces", "sway/mode"],
         "modules-center": ["sway/window"],
-        "modules-right": ["network#vpn", "network#wifi", "network#ethernet", "network#disconnected", "clock", "custom/poweroff"],
+        "modules-right": ["battery#bat1", "battery#bat2", "disk", "memory", "cpu", "temperature", "pulseaudio", "backlight", "idle_inhibitor", "network#wifi", "network#disconnected", "clock", "tray", "custom/poweroff"],
         "sway/window": {
             "format": "{} ",
             "on-click": "swaymsg kill"
@@ -98,7 +98,7 @@
             "on-click": "nm-connection-editor"
         },
         "network#wifi": {
-            "interface": "wlp*",
+            "interface": "wlan0",
             "format-ethernet": "",
             "format-wifi": " {essid} ({signalStrength}%)",
             "format-linked": "",
@@ -146,29 +146,6 @@
             "exec": "sh $HOME/.config/waybar/scripts/mail.sh",
             "interval": 120,
             "on-click": "thunderbird && swaymsg '[app_id=thunderbird] focus'"
-        }
-    },
-    {
-        "name": "bottombar",
-        "layer": "top",
-        "position": "bottom",
-        "height": 30,
-        "modules-left": ["tray"],
-        "modules-center": ["wlr/taskbar"],
-        "modules-right": ["sway/workspaces", "sway/mode"],
-        "tray": {
-            "icon-size": 13,
-            "spacing": 10
-        },
-        "wlr/taskbar": {
-            "format": "{icon} {app_id}",
-            "icon-size": 13,
-            "tooltip": false,
-            "on-click": "activate",
-            "on-click-right": "close"
-        },
-        "sway/mode": {
-            "format": "<span style=\"italic\">{}</span>"
         }
     }
 ]
