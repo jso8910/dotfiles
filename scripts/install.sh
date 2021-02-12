@@ -28,6 +28,10 @@ function install_pkg {
 }
 cd ..
 
+print 'Installing and enabling tlp'
+install_pkg tlp
+sudo systemctl enable --now tlp
+
 print 'Generating pkgfile for command-not-found support'
 install_pkg pkgfile
 sudo pkgfile --update

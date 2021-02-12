@@ -229,11 +229,12 @@ exec_always {
     gsettings set $gnome-schema font-name 'Sans Serif,  10'
 }
 
-exec swayidle -w\
-    timeout 1070 'swaylock -i ~/Pictures/Wallpapers/blurredwallpaper.png'\
-    timeout 770 'swaymsg "output * dpms off"' \
-    resume 'swaymsg "output * dpms on"' \
-    after-resume 'swaylock -i ~/Pictures/Wallpapers/blurredwallpaper.png'
+
+exec swayidle -w \
+after-resume 'sudo systemctl start tlp && swaylock -i ~/Pictures/Wallpapers/blurredwallpaper.png;' \
+before-sleep 'sudo systemctl stop tlp'
+
+
 
 exec mako
 
