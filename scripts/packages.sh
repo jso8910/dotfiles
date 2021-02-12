@@ -72,4 +72,4 @@ print 'Installing yadm'
 install_pkg yadm
 
 print 'Cloning yadm'
-yadm clone --no-bootstrap https://github.com/jso8910/dotfiles
+yadm clone --no-bootstrap -f https://github.com/jso8910/dotfiles
