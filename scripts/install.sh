@@ -71,5 +71,3 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 print 'Installing yadm'
 install_pkg yadm
 
-print 'Cloning yadm'
-yadm clone --no-bootstrap -f https://github.com/jso8910/dotfiles
