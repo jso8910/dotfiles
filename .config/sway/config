@@ -231,8 +231,8 @@ exec_always {
 
 
 exec swayidle -w \
-after-resume 'sudo systemctl start tlp && swaylock -i ~/Pictures/Wallpapers/blurredwallpaper.png;' \
-before-sleep 'sudo systemctl stop tlp'
+after-resume 'swaylock -i ~/Pictures/Wallpapers/blurredwallpaper.png;'
+#before-sleep 'sudo systemctl stop tlp'
 
 
 
