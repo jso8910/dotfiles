@@ -7,9 +7,19 @@
         "modules-left": ["sway/workspaces", "sway/mode"],
         "modules-center": ["sway/window"],
         "modules-right": ["battery#bat1", "battery#bat2", "disk", "memory", "cpu", "temperature", "pulseaudio", "backlight", "idle_inhibitor", "network#wifi", "network#disconnected", "clock", "tray", "custom/poweroff"],
+        "sway/workspaces": {
+          "format": "{name} {icon}",
+          "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "海",
+            "4": "",
+            "5": ""
+          }
+        },
         "sway/window": {
             "format": "{} ",
-            "on-click": "swaymsg kill"
+            "max-length": 40
         },
         "idle_inhibitor": {
             "format": "{icon}",
@@ -58,9 +68,10 @@
                 "good": 99,
                 "empty": 5
             },
-            "format": "{icon} {capacity}%",
+            "format": "{icon} {capacity}% {time}",
             "format-charging": " {capacity}%",
             "format-plugged": " {capacity}%",
+            "format-time": "({H}:{M})",
             "format-empty": "",
             "format-full": "",
             "format-icons": ["", "", "", "", ""]
@@ -74,8 +85,9 @@
                 "good": 99,
                 "critical": 15
             },
-            "format": "{icon} {capacity}%",
+            "format": "{icon} {capacity}% {time{",
             "format-charging": " {capacity}%",
+            "format-time": "({H}:{M})",
             "format-plugged": " {capacity}%",
             "format-full": "",
             "format-icons": ["", "", "", "", ""]
