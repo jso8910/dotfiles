@@ -1,3 +1,4 @@
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -42,5 +43,9 @@ export EDITOR=nvim
 alias swayconfig="nvim ~/.config/sway/config"
 alias obs="QT_QPA_PLATFORM=xcb obs"
 alias record='wf-recorder -g $(slurp) -f recording-$(date +"%Y-%m-%d_%H.%M.%S").mp4'
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+bindkey "^I" autosuggest-accept
+bindkey "^ " autosuggest-execute
 
+eval $(thefuck --alias)

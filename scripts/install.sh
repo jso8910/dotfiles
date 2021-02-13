@@ -59,7 +59,7 @@ print 'Installing coding stuff'
 install_pkg code jetbrains-toolbox
 
 print 'Installing misc stuff'
-install_pkg bottom tldr light i3-volume mako swaybg mopidy ncmpcpp swayidle swaylock grimshot xorg-xwayland
+install_pkg bottom tldr light i3-volume mako swaybg mopidy ncmpcpp swayidle swaylock grimshot xorg-xwayland thefuck
 
 print 'Installing rofi'
 install_pkg rofi
@@ -70,7 +70,10 @@ install_pkg alacritty
 print 'Installing waybar'
 install_pkg waybar
 
+print 'Installing p10k and zsh-autosuggestions'
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+
 
 print 'Installing yadm'
 install_pkg yadm
