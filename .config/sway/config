@@ -22,10 +22,6 @@ font pango:monospace 8
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- swaylock --nofork
-
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
@@ -209,6 +205,8 @@ input 2:10:TPPS/2_Elan_TrackPoint accel_profile adaptive
 input type:touchpad natural_scroll enabled 
 input type:touchpad accel_profile adaptive
 input type:touchpad pointer_accel 0.5
+input 4152:5000:SteelSeries_SteelSeries_Kinzu_V3_Gaming_Mouse natural_scroll enabled 
+input 4152:5000:SteelSeries_SteelSeries_Kinzu_V3_Gaming_Mouse pointer_accel 0.3
 exec --no-startup-id blueman-manager 
 
 

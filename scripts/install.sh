@@ -35,8 +35,8 @@ print 'Generating pkgfile for command-not-found support'
 install_pkg pkgfile
 sudo pkgfile --update
 
-print 'Installing Firefox'
-install_pkg firefox
+print 'Installing Chromium'
+install_pkg chromium
 
 print 'Installing swaywm'
 install_pkg sway
