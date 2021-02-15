@@ -83,3 +83,5 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosugges
 print 'Installing yadm'
 install_pkg yadm
 
+print 'Doing this last for courtesy, may take a while, might not work, but installing nerd-fonts-complete. If it works, feel free to rm -rf ~/.fonts/fonts/nerd-fonts-complete'
+install_pkg nerd-fonts-complete
