@@ -2,7 +2,6 @@
 
 
 print "If you aren't on arch, change the install commands and everything"
-print 'Please disable any display manager you have (eg lightdm). Disable it with systemctl disable [name of manager]'
 print 'Warning!!!! THIS WILL DELETE ALL CONFIGS YOU HAVE FOR SWAY, WAYBAR, ALACRITTY, NVIM, ROFI, AND ZSH ALONG WITH YOUR ~/.fonts FOLDER.'
 print -n "Note: This script requires you having access to sudo. Continue? [y/N]: $(tput sgr0)" && read -k1 && print
 
@@ -41,15 +40,10 @@ install_pkg chromium
 print 'Installing swaywm'
 install_pkg sway
 
-print 'Installing greetd and enabling'
-install_pkg greetd greetd-gtkgreet
-sudo rm /etc/greetd/config.toml
-sudo mkdir -p /etc/greetd
-sudo cp greetd-config.toml /etc/greetd/config.toml
-
-sudo rm /etc/greetd/sway-config
-sudo cp greetd-sway-config /etc/greetd/sway-config
-sudo systemctl enable greetd
+print 'Installing ly and enabling'
+install_pkg ly 
+sudo systemctl disable display-manager
+sudo systemctl enable ly 
 
 print 'Installing nvim'
 install_pkg neovim
