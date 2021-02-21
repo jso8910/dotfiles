@@ -16,6 +16,8 @@ set incsearch
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 endif
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 "dein Scripts-----------------------------
 if &compatible
@@ -34,7 +36,6 @@ if dein#load_state('/home/jason/.local/share/vim')
   call dein#add('/home/jason/.local/share/vim/repos/github.com/Shougo/dein.vim')
 
   call dein#add('Shougo/deoplete.nvim')
-  call deoplete#enable()
 
   " Add or remove your plugins here like this:
   "call dein#add('Shougo/neosnippet.vim')
@@ -55,3 +56,4 @@ if dein#check_install()
 endif
 
 "End dein Scripts-------------------------
+call deoplete#enable()
