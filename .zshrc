@@ -51,5 +51,4 @@ bindkey "^ " autosuggest-execute
 eval $(thefuck --alias)
 export IDEA_JDK=/usr/lib/jvm/java-8-openjdk
 export STUDIO_JDK=/usr/lib/jvm/java-8-openjdk
-export PYCHARM_JDK=/usr/lib/jvm/java-8-openjdk
 export _JAVA_AWT_WM_NONREPARENTING=1
