@@ -45,11 +45,15 @@ install_pkg sway
 #sudo systemctl disable display-manager
 #sudo systemctl enable ly 
 
-print 'Installing nvim'
-install_pkg neovim
 
 print 'Installing python3 and pip' 
 install_pkg python3 python-pip
+
+print 'Installing nvim'
+install_pkg neovim
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+sh installer.sh ~/.local/share/vim
+pip install --user --upgrade pynvim
 
 print 'Installing vlc'
 install_pkg vlc
