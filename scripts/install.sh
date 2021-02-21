@@ -40,10 +40,10 @@ install_pkg chromium
 print 'Installing swaywm'
 install_pkg sway
 
-print 'Installing ly and enabling'
-install_pkg ly 
-sudo systemctl disable display-manager
-sudo systemctl enable ly 
+#print 'Installing ly and enabling'
+#install_pkg ly 
+#sudo systemctl disable display-manager
+#sudo systemctl enable ly 
 
 print 'Installing nvim'
 install_pkg neovim
