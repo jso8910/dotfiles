@@ -230,10 +230,10 @@ exec_always {
 bindsym $mod+Shift+minus exec swaylock -i ~/Pictures/Wallpapers/blurredwallpaper.png;
 
 exec swayidle -w \
-timeout 1070 'swaylock -f'\
-timeout 770 'swaymsg "output * dpms off"' \
-resume 'swaymsg "output * dpms on"' \
-after-resume 'swaylock -i ~/Pictures/Wallpapers/blurredwallpaper.png;'
+  timeout 1070 'swaylock -f'\
+  timeout 770 'swaymsg "output * dpms off"' \
+  resume 'swaymsg "output * dpms on"' \
+  after-resume 'swaylock -i ~/Pictures/Wallpapers/blurredwallpaper.png;'
 
 
 exec mako
