@@ -38,7 +38,7 @@ print 'Installing Chromium'
 install_pkg chromium
 
 print 'Installing swaywm'
-install_pkg sway
+install_pkg sway-borders-git
 
 #print 'Installing ly and enabling'
 #install_pkg ly 
@@ -62,7 +62,7 @@ print 'Installing coding stuff'
 install_pkg code jetbrains-toolbox
 
 print 'Installing misc stuff'
-install_pkg bottom-bin tldr light i3-volume mako swaybg mopidy ncmpcpp swayidle swaylock grimshot xorg-xwayland thefuck
+install_pkg bottom-bin tldr light i3-volume mako swaybg-git mopidy ncmpcpp swayidle swaylock grimshot-git xorg-xwayland thefuck
 
 print 'Installing rofi'
 install_pkg rofi

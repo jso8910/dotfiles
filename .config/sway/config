@@ -206,7 +206,7 @@ input type:touchpad natural_scroll enabled
 input type:touchpad accel_profile adaptive
 input type:touchpad pointer_accel 0.5
 input 4152:5000:SteelSeries_SteelSeries_Kinzu_V3_Gaming_Mouse natural_scroll enabled 
-input 4152:5000:SteelSeries_SteelSeries_Kinzu_V3_Gaming_Mouse pointer_accel 0.3
+input 4152:5000:SteelSeries_SteelSeries_Kinzu_V3_Gaming_Mouse pointer_accel -0.5
 exec --no-startup-id blueman-manager 
 
 
