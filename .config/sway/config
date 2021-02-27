@@ -227,13 +227,13 @@ exec_always {
     gsettings set $gnome-schema font-name 'Sans Serif,  10'
 }
 
-bindsym $mod+Shift+minus exec swaylock --screenshots --clock --indicator --effect-blur 50x05;  
+bindsym $mod+Shift+minus exec swaylock --screenshots --clock --indicator --effect-blur 50000x50 --fade-in 0.5;  
 
 exec swayidle -w \
-  timeout 1070 'swaylock -f'\
+  timeout 1070 'swaylock --screenshots --clock --indicator --effect-blur 50x05; '\
   timeout 770 'swaymsg "output * dpms off"' \
   resume 'swaymsg "output * dpms on"' \
-  after-resume 'swaylock -i ~/Pictures/Wallpapers/blurredwallpaper.png;'
+  after-resume 'swaylock --screenshots --clock --indicator --effect-blur 50x05;'
 
 
 exec mako
