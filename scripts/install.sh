@@ -62,7 +62,7 @@ print 'Installing coding stuff'
 install_pkg code jetbrains-toolbox
 
 print 'Installing misc stuff'
-install_pkg bottom-bin tldr light i3-volume mako swaybg mopidy ncmpcpp swayidle swaylock grimshot xorg-xwayland thefuck
+install_pkg bottom-bin tldr light i3-volume mako swaybg mopidy ncmpcpp swayidle swaylock grimshot xorg-xwayland thefuck sunwait wallutils
 
 print 'Installing rofi'
 install_pkg rofi
