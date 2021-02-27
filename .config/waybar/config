@@ -4,7 +4,7 @@
         "layer": "top",
         "position": "top",
         "height": 30,
-        "modules-left": ["sway/workspaces", "sway/mode"],
+        "modules-left": ["sway/workspaces", "sway/mode", "custom/sunpaper"],
         "modules-center": ["sway/window"],
         "modules-right": ["battery#bat1", "battery#bat2", "disk", "memory", "cpu", "temperature", "pulseaudio", "backlight", "idle_inhibitor", "network#wifi", "network#disconnected", "clock", "tray", "custom/poweroff"],
         "sway/workspaces": {
@@ -16,6 +16,11 @@
             "4": "",
             "5": ""
           }
+        },
+        "custom/sunpaper":{
+          "exec": "/home/jason/sunpaper/sunpaper.sh", 
+          "interval": 60,
+          "tooltip": false
         },
         "sway/window": {
             "format": "{} ",
