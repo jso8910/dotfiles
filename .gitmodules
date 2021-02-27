@@ -1,3 +1,4 @@
 [submodule "sunpaper"]
 	path = sunpaper
 	url = https://github.com/jso8910/sunpaper
+	branch = main
