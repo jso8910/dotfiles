@@ -38,7 +38,7 @@ print 'Installing Chromium'
 install_pkg chromium
 
 print 'Installing swaywm'
-install_pkg sway-git
+install_pkg sway
 
 #print 'Installing ly and enabling'
 #install_pkg ly 
