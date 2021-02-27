@@ -181,7 +181,7 @@ for_window [class=".*"] border pixel 0
 exec --no-startup-id i3 border pixel 2 
 gaps inner 8
 gaps outer 8 
-exec swaybg -i ~/Pictures/Wallpapers/wallpaper.png   
+#exec swaybg -i ~/Pictures/Wallpapers/wallpaper.png   
 
 # Next/previous workspace
 bindsym Mod1+Right workspace next
@@ -227,7 +227,7 @@ exec_always {
     gsettings set $gnome-schema font-name 'Sans Serif,  10'
 }
 
-bindsym $mod+Shift+minus exec swaylock -i ~/Pictures/Wallpapers/blurredwallpaper.png;
+bindsym $mod+Shift+minus exec swaylock --screenshots --clock --indicator --effect-blur 50x05;  
 
 exec swayidle -w \
   timeout 1070 'swaylock -f'\
@@ -249,3 +249,5 @@ bindsym Print+Ctrl  exec grimshot copy window
 bindsym $mod+Shift+f floating toggle
 
 exec export _JAVA_AWT_WM_NONREPARENTING=1
+exec_always rm ~/.cache/sunpaper.cache
+exec_always ~/sunpaper/sunpaper.sh
