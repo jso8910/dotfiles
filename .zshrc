@@ -42,7 +42,7 @@ alias bluesink='pacmd set-default-sink $(pacmd list-sinks | grep "<bluez_sink" |
 export EDITOR=nvim
 alias swayconfig="nvim ~/.config/sway/config"
 alias obs="QT_QPA_PLATFORM=xcb obs"
-alias record='wf-recorder -g $(slurp) -f recording-$(date +"%Y-%m-%d_%H.%M.%S").mp4'
+alias record='wf-recorder -g "$(slurp)" -f recording-$(date +"%Y-%m-%d_%H.%M.%S").mp4'
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 bindkey "^I" autosuggest-accept

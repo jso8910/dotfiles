@@ -13,6 +13,10 @@ set noswapfile
 set nobackup
 set incsearch
 
+let delimitMate_expand_cr = 1
+
+let delimitMate_expand_space = 1
+
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 endif
@@ -37,6 +41,7 @@ if dein#load_state('/home/jason/.local/share/vim')
 
   call dein#add('Shougo/deoplete.nvim')
 
+  call dein#add('Raimondi/delimitMate')
   " Add or remove your plugins here like this:
   "call dein#add('Shougo/neosnippet.vim')
   "call dein#add('Shougo/neosnippet-snippets')
