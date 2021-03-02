@@ -104,6 +104,8 @@
     # ip                    # ip address and bandwidth usage for a specified network interface
     # public_ip             # public IP address
     # proxy                 # system-wide http/https/ftp proxy
+    test1
+    newline
     battery               # internal battery
     # wifi                  # wifi speed
     # example               # example user-defined segment (see prompt_example function below)
@@ -1620,6 +1622,10 @@
   # Type `p10k help segment` for documentation and a more sophisticated example.
   function prompt_example() {
     p10k segment -b 1 -f 3 -i '⭐' -t 'hello, %n'
+  }
+
+  function prompt_test1() {
+    p10k segment -t "%n@$(hostname)" -b purple
   }
 
   # User-defined prompt segments may optionally provide an instant_prompt_* function. Its job
