@@ -12,6 +12,9 @@ set smartcase
 set noswapfile
 set nobackup
 set incsearch
+set mouse=a
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
 
 let delimitMate_expand_cr = 1
 

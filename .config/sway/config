@@ -249,5 +249,5 @@ bindsym Print+Ctrl  exec grimshot copy window
 bindsym $mod+Shift+f floating toggle
 
 exec export _JAVA_AWT_WM_NONREPARENTING=1
-exec_always rm ~/.cache/sunpaper.cache
+exec_always ~/sunpaper/sunpaper.sh -c
 exec_always ~/sunpaper/sunpaper.sh
