@@ -47,7 +47,7 @@ install_pkg sway
 
 
 print 'Installing python3 and pip' 
-install_pkg python3 python-pip
+install_pkg python python-pip
 
 print 'Installing nvim'
 install_pkg neovim
