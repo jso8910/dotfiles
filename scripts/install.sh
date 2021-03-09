@@ -77,6 +77,10 @@ print 'Installing p10k and zsh-autosuggestions'
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 
+print 'Installing the kernel thing, best package'
+install_pkg kernel-modules-hook
+sudo systemctl daemon-reload 
+sudo systemctl enable --now linux-modules-cleanup
 
 print 'Installing yadm'
 install_pkg yadm

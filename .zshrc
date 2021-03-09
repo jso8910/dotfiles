@@ -1,13 +1,3 @@
-# Well idk where else to put it but whenever there is a kernel update do this:
-# cd ~/build/linux-lts-custom/
-# asp checkout linux-lts
-# asp update 
-# cd linux-lts 
-# git stash
-# git pull
-# git stash pop
-
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -110,3 +100,4 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
 fi
 export MAKEFLAGS="-j4"
+alias lsize="ls -Slhr"
