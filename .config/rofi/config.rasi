@@ -1,4 +1,4 @@
 configuration {
-	modi: "drun,window,file-browser,keys,ssh";
+	modi: "drun,file-browser,keys,ssh";
 	theme: "dracula";
 }

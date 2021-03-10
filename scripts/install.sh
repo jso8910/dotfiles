@@ -82,6 +82,8 @@ install_pkg kernel-modules-hook
 sudo systemctl daemon-reload 
 sudo systemctl enable --now linux-modules-cleanup
 
+print 'I hate ttf-dejavu so in case it installed'
+paru -Rsu ttf-dejavu --noconfirm
 print 'Installing yadm'
 install_pkg yadm
 
