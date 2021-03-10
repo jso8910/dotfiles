@@ -65,10 +65,10 @@ print 'Installing misc stuff'
 install_pkg bottom-bin tldr light i3-volume mako swaybg mopidy ncmpcpp swayidle swaylock-effects-git grimshot xorg-xwayland thefuck sunwait wallutils wl-clipboard libnotify
 
 print 'Installing rofi'
-install_pkg rofi
+install_pkg rofi-lbonn-wayland-git 
 
-print 'Installing alacritty'
-install_pkg alacritty
+print 'Installing foot'
+install_pkg foot
 
 print 'Installing waybar'
 install_pkg waybar
