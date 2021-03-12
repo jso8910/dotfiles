@@ -182,7 +182,7 @@ for_window [class=".*"] border pixel 0
 exec --no-startup-id i3 border pixel 2 
 gaps inner 8
 gaps outer 8 
-#exec swaybg -i ~/Pictures/Wallpapers/wallpaper.png   
+#exec_always swaybg -i ~/Pictures/Wallpapers/wallpaper.png
 
 # Next/previous workspace
 bindsym Mod1+Right workspace next

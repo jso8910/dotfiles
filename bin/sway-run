@@ -3,5 +3,5 @@ export IDEA_JDK=/usr/lib/jvm/java-8-openjdk
 export STUDIO_JDK=/usr/lib/jvm/java-8-openjdk 
 export TERMINAL="alacritty"
 export BROWSER="chromium"
-
+export QT_QPA_PLATFORM=xcb
 sway
