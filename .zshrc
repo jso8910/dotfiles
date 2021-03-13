@@ -101,3 +101,5 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 fi
 export MAKEFLAGS="-j4"
 alias lsize="ls -Slhr"
+alias neofetch="neofetch --ascii_distro arch"
+alias nyarchfetch="neofetch --ascii ~/ascii/nyarch --gap '-250'"
