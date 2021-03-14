@@ -252,3 +252,4 @@ bindsym $mod+Shift+f floating toggle
 exec export _JAVA_AWT_WM_NONREPARENTING=1
 exec_always ~/sunpaper/sunpaper.sh -c
 exec_always ~/sunpaper/sunpaper.sh
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
