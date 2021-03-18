@@ -1,0 +1,5 @@
+[output *]
+image=~/sunpaper/screenshots/sway-gray.png
+filter=nearest
+scaling-mode=fill
+anchor=center

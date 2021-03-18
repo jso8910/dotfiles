@@ -9,13 +9,19 @@ longitude="103.819839E"
 
 # Set how you want your wallpaper displayed
 # stretch | center | tile | scale | zoom | fill
-wallpaperMode="stretch"
+wallpaperMode="scale"
 
 # Set full path to the wallpaper theme folder
 # Theme folder names:
 # Apple: The-Beach The-Cliffs The-Lake The-Desert
 # Louis Coyle: Lakeside
-wallpaperPath="$HOME/sunpaper/images/Corporate-Synergy"
+wallpaperPath="$HOME/sunpaper/images/The-Desert"
+
+oguri_enable="true"
+
+oguri_config="$HOME/.config/oguri/config"
+
+wallpaperModeOguri="scale"
 
 # Sunpaper writes some cache files to keep track of 
 # persistent variables.
