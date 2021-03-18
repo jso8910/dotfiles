@@ -1,0 +1,51 @@
+##CONFIG OPTIONS---------------------------------
+
+# This script has some testing functions that can be called
+# with option flags. Check sunpaper.sh -h 
+
+# Set your local latitude and longitude for sun calculations
+latitude="1.352083N"
+longitude="103.819839E"
+
+# Set how you want your wallpaper displayed
+# stretch | center | tile | scale | zoom | fill
+wallpaperMode="stretch"
+
+# Set full path to the wallpaper theme folder
+# Theme folder names:
+# Apple: The-Beach The-Cliffs The-Lake The-Desert
+# Louis Coyle: Lakeside
+wallpaperPath="$HOME/sunpaper/images/Corporate-Synergy"
+
+# Sunpaper writes some cache files to keep track of 
+# persistent variables.
+#
+# NOTE: call sunpaper.sh -c to clear cache contents. This
+# will force a wallpaper reload after configuration changes.
+#
+# Set a different folder for this file or just leave
+# it as the default.
+cachePath="$HOME/.cache"
+
+# You may use script to trigger a darkmode on your desktop
+# or any other actions you want to preform on day / night.
+# This feature is disabled by default but you can enable
+# it here like:
+# darkmode_enable="true"
+darkmode_enable="true"
+
+# And if darkmode is enabled, use these two lines
+# to set the the external command to run on day / night.
+# example: 
+# darkmode_run_day="bash /path/to/switch.sh light"
+darkmode_run_day=""
+darkmode_run_night=""
+
+# Sunpaper has a special mode for use with sway/waybar 
+# It displays an icon and sun times report as a tooltip.
+# sunpaper.sh --waybar
+# 
+# Set the icon display for that here
+status_icon=""
+
+##CONFIG OPTIONS END----------------------------
