@@ -31,7 +31,6 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-alias macos=~/OSX-KVM/OpenCore-Boot.sh
 PATH=~/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/tools:/opt/android-sdk/tools/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/jason/.local/bin:/var/lib/snapd/snap/bin
 alias size="du -sh"
 alias offline='unshare -r -n'
@@ -112,4 +111,6 @@ alias source-venv="source venv/bin/activate"
 
 # opam configuration
 test -r /home/jason/.opam/opam-init/init.zsh && . /home/jason/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-alias newmac="echo $(openssl rand -base64 12)|md5sum|sed 's/^\(..\)\(..\)\(..\)\(..\)\(..\).*$/02:\1:\2:\3:\4:\5/'"
+newmac() {
+  echo $(openssl rand -base64 12)|md5sum|sed 's/^\(..\)\(..\)\(..\)\(..\)\(..\).*$/02:\1:\2:\3:\4:\5/'
+}
