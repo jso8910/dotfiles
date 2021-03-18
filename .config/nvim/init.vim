@@ -13,6 +13,8 @@ set noswapfile
 set nobackup
 set incsearch
 set mouse=a
+let g:python3_host_prog='/usr/bin/python3'
+let g:python_host_prog='/usr/bin/python'
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
 

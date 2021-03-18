@@ -8,9 +8,13 @@ fi
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=10000
+HISTSIZE=9223372036854775807
+SAVEHIST=9223372036854775807
+setopt INC_APPEND_HISTORY
+setopt HIST_FIND_NO_DUPS
+
 #bindkey -v
+bindkey '^R' history-incremental-search-backward
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/jason/.zshrc'
@@ -103,3 +107,9 @@ export MAKEFLAGS="-j4"
 alias lsize="ls -Slhr"
 alias neofetch="neofetch --ascii_distro arch"
 alias nyarchfetch="neofetch --ascii ~/ascii/nyarch --gap '-250'"
+alias virtualenv-create="virtualenv venv"
+alias source-venv="source venv/bin/activate"
+
+# opam configuration
+test -r /home/jason/.opam/opam-init/init.zsh && . /home/jason/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+alias newmac="echo $(openssl rand -base64 12)|md5sum|sed 's/^\(..\)\(..\)\(..\)\(..\)\(..\).*$/02:\1:\2:\3:\4:\5/'"
