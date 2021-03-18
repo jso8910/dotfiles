@@ -73,6 +73,9 @@ install_pkg foot
 print 'Installing waybar'
 install_pkg waybar
 
+print 'Installing sunpaper'
+git clone https://github.com/hexive/sunpaper.git ~/sunpaper
+
 print 'Installing p10k and zsh-autosuggestions'
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
