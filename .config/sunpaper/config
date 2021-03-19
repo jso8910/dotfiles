@@ -15,13 +15,15 @@ wallpaperMode="scale"
 # Theme folder names:
 # Apple: The-Beach The-Cliffs The-Lake The-Desert
 # Louis Coyle: Lakeside
-wallpaperPath="$HOME/sunpaper/images/The-Desert"
+wallpaperPath="$HOME/sunpaper/images/The-Beach"
 
-oguri_enable="true"
+oguri_enable="false"
 
 oguri_config="$HOME/.config/oguri/config"
 
 wallpaperModeOguri="scale"
+
+
 
 # Sunpaper writes some cache files to keep track of 
 # persistent variables.
