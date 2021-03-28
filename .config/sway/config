@@ -231,8 +231,8 @@ exec_always {
 bindsym $mod+Shift+minus exec swaylock --screenshots --clock --indicator --effect-blur 50000x50 --fade-in 0.5;  
 
 exec swayidle -w \
-  timeout 1070 'swaylock --screenshots --clock --indicator --effect-blur 50000x50 --fade-in 0.5; '\
-  timeout 770 'swaymsg "output * dpms off"' \
+  timeout 3600 'swaylock --screenshots --clock --indicator --effect-blur 50000x50 --fade-in 0.5; '\
+  timeout 3600 'swaymsg "output * dpms off"' \
   resume 'swaymsg "output * dpms on"' \
   after-resume 'swaylock --screenshots --clock --indicator --effect-blur 50000x50 --fade-in 0.5;'
 
@@ -253,3 +253,8 @@ exec export _JAVA_AWT_WM_NONREPARENTING=1
 exec_always ~/sunpaper/sunpaper.sh -c
 exec_always ~/sunpaper/sunpaper.sh
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+input type:keyboard {
+  xkb_layout "us"
+  xkb_options "compose:rctrl"
+}

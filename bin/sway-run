@@ -4,4 +4,9 @@ export STUDIO_JDK=/usr/lib/jvm/java-8-openjdk
 export TERMINAL="alacritty"
 export BROWSER="chromium"
 export QT_QPA_PLATFORM=xcb
+#export XKB_DEFAULT_LAYOUT=us
+#export XKB_DEFAULT_VARIANT=altgr-intl
+export MOZ_ENABLE_WAYLAND=1
+#export XKB_DEFAULT_OPTIONS=compose:rctrl
+#export XKB_DEFAULT_OPTIONS=compose:menu,level3:rctrl_switch
 sway

@@ -114,3 +114,6 @@ test -r /home/jason/.opam/opam-init/init.zsh && . /home/jason/.opam/opam-init/in
 newmac() {
   echo $(openssl rand -base64 12)|md5sum|sed 's/^\(..\)\(..\)\(..\)\(..\)\(..\).*$/02:\1:\2:\3:\4:\5/'
 }
+export PATH=/home/jason/.cargo/bin:$PATH
+
+alias gnth="MOZ_ENABLE_WAYLAND=1 QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session"

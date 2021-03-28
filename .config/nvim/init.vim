@@ -44,7 +44,9 @@ if dein#load_state('/home/jason/.local/share/vim')
   " Required:
   call dein#add('/home/jason/.local/share/vim/repos/github.com/Shougo/dein.vim')
 
-  call dein#add('Shougo/deoplete.nvim')
+  call dein#add('neoclide/coc.nvim', { 'merged': 0 })
+
+  "call dein#add('Shougo/deoplete.nvim')
 
   call dein#add('Raimondi/delimitMate')
   " Add or remove your plugins here like this:
@@ -65,5 +67,6 @@ if dein#check_install()
   call dein#install()
 endif
 
+
 "End dein Scripts-------------------------
-call deoplete#enable()
+"call deoplete#enable()
