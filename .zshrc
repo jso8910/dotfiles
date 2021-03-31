@@ -151,3 +151,4 @@ updateAurPackage() {
   git commit -a
   git push
 }
+
