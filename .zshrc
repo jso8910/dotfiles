@@ -117,3 +117,37 @@ newmac() {
 export PATH=/home/jason/.cargo/bin:$PATH
 
 alias gnth="MOZ_ENABLE_WAYLAND=1 QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session"
+#alias gnth="XDG_SESSION_TYPE=wayland dbus-run-session gnome-session"
+
+updateLinuxLogoStart() {
+  cd ~/build
+  rm -rf linux-lts
+  asp update
+  asp checkout linux-lts
+  cd linux-lts
+  cd trunk
+  cp config config.new
+  cp ~/build/linux-lts-logo/config.patch config.old
+  echo "Apply changes from config.old to config.new and then run second part"
+}
+
+updateLinuxLogoEnd() {
+  cd ~/build/linux-lts/trunk
+  diff --unified --recursive --text --strip config config.new > config.patch
+  echo "Check on the diff"
+  echo "Make sure the change the file names to a/.config and b/.config"
+  sleep 3
+  vim config.patch
+  echo "Sleeping.... ctrl c if diff isn't correct"
+  sleep 5
+  cp config.patch ~/build/linux-lts-logo/config.patch
+  echo "Review changes from commit and make them manually. Make sure you check what file they are in (disregard anything not in trunk/)"
+  sleep 3
+  git show 
+}
+
+updateAurPackage() {
+  makepkg --printsrcinfo > .SRCINFO
+  git commit -a
+  git push
+}
