@@ -129,6 +129,8 @@ updateLinuxLogoStart() {
   cp config config.new
   cp ~/build/linux-lts-logo/config.patch config.old
   echo "Apply changes from config.old to config.new and then run second part"
+  sleep 2
+  vim '+edit config.old' '+vsplit' '+edit config.new'
 }
 
 updateLinuxLogoEnd() {
