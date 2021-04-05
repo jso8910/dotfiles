@@ -2,7 +2,6 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export IDEA_JDK=/usr/lib/jvm/java-8-openjdk 
 export STUDIO_JDK=/usr/lib/jvm/java-8-openjdk 
 export TERMINAL="alacritty"
-export BROWSER="chromium"
 export QT_QPA_PLATFORM=xcb
 #export XKB_DEFAULT_LAYOUT=us
 #export XKB_DEFAULT_VARIANT=altgr-intl

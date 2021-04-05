@@ -258,4 +258,6 @@ input type:keyboard {
   xkb_layout "us"
   xkb_options "compose:rctrl"
 }
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioPlay exec playerctl play
 

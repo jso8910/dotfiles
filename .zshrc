@@ -33,6 +33,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 PATH=~/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/tools:/opt/android-sdk/tools/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/jason/.local/bin:/var/lib/snapd/snap/bin
 alias size="du -sh"
+alias sudo="sudo "
 alias offline='unshare -r -n'
 alias dir='dir --color=auto'
 alias ls='ls --color=auto'
@@ -153,4 +154,11 @@ updateAurPackage() {
   git commit -a
   git push
 }
+export CCACHE_EXEC=/usr/bin/ccache
+export USE_CCACHE=1
 
+
+[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
+source /usr/share/nvm/nvm.sh
+source /usr/share/nvm/bash_completion
+source /usr/share/nvm/install-nvm-exec
