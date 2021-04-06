@@ -59,7 +59,7 @@ print 'Installing vlc'
 install_pkg vlc
 
 print 'Installing coding stuff'
-install_pkg code jetbrains-toolbox
+install_pkg code code-marketplace jetbrains-toolbox
 
 print 'Installing misc stuff'
 install_pkg bottom-bin tldr light i3-volume mako swaybg mopidy ncmpcpp swayidle swaylock-effects-git grimshot xorg-xwayland thefuck sunwait wallutils wl-clipboard libnotify
