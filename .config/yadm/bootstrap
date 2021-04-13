@@ -1,0 +1,4 @@
+#!/bin/bash
+
+git clone https://github.com/jso8910/password_store ~/.password-store
+~/scripts/install.sh

@@ -34,8 +34,8 @@ print 'Generating pkgfile for command-not-found support'
 install_pkg pkgfile
 sudo pkgfile --update
 
-print 'Installing Chromium'
-install_pkg chromium
+print 'Installing browser' 
+install_pkg qutebrowser pass pass-import qt5-webengine-widevine qt5-wayland qt5-webkit
 
 print 'Installing swaywm'
 install_pkg sway

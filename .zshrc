@@ -116,11 +116,43 @@ newmac() {
   echo $(openssl rand -base64 12)|md5sum|sed 's/^\(..\)\(..\)\(..\)\(..\)\(..\).*$/02:\1:\2:\3:\4:\5/'
 }
 export PATH=/home/jason/.cargo/bin:$PATH
+export PATH=/root/.local/share/gem/ruby/*/bin:/home/jason/.gem/ruby/*/bin$PATH
 
 alias gnth="MOZ_ENABLE_WAYLAND=1 QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session"
 #alias gnth="XDG_SESSION_TYPE=wayland dbus-run-session gnome-session"
 
 updateLinuxLogoStart() {
+  cd ~/build
+  rm -rf linux
+  asp update
+  asp checkout linux
+  cd linux
+  cd trunk
+  cp config config.new
+  cp ~/build/linux-logo/config.patch config.old
+  echo "Apply changes from config.old to config.new and then run second part"
+  sleep 2
+  vim '+edit config.old' '+vsplit' '+edit config.new'
+}
+
+updateLinuxLogoEnd() {
+  cd ~/build/linux/trunk
+  diff --unified --recursive --text --strip config config.new > config.patch
+  echo "Check on the diff"
+  echo "Make sure the change the file names to a/.config and b/.config"
+  sleep 3
+  vim config.patch
+  echo "Sleeping.... ctrl c if diff isn't correct"
+  sleep 5
+  cp config.patch ~/build/linux-logo/config.patch
+  cp config ~/build/linux-logo/config
+  echo "Review changes from commit and make them manually. Make sure you check what file they are in (disregard anything not in trunk/)"
+  sleep 3
+  git show 
+}
+
+
+updateLinuxLogoLTSStart() {
   cd ~/build
   rm -rf linux-lts
   asp update
@@ -134,7 +166,7 @@ updateLinuxLogoStart() {
   vim '+edit config.old' '+vsplit' '+edit config.new'
 }
 
-updateLinuxLogoEnd() {
+updateLinuxLogoLTSEnd() {
   cd ~/build/linux-lts/trunk
   diff --unified --recursive --text --strip config config.new > config.patch
   echo "Check on the diff"
@@ -144,6 +176,8 @@ updateLinuxLogoEnd() {
   echo "Sleeping.... ctrl c if diff isn't correct"
   sleep 5
   cp config.patch ~/build/linux-lts-logo/config.patch
+  cp config ~/build/linux-lts-logo/config
+  
   echo "Review changes from commit and make them manually. Make sure you check what file they are in (disregard anything not in trunk/)"
   sleep 3
   git show 
