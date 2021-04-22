@@ -34,7 +34,11 @@ print 'Generating pkgfile for command-not-found support'
 install_pkg pkgfile
 sudo pkgfile --update
 
-print 'Installing browser' 
+print 'Installing discord mopidy rich presence'
+install_pkg mpd-rich-presence-discord-git
+
+print 'Installing browsers (multiple depending on my mood)' 
+install_pkg chromium
 install_pkg qutebrowser pass pass-import qt5-webengine-widevine qt5-wayland qt5-webkit
 
 print 'Installing swaywm'

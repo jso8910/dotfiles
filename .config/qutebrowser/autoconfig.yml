@@ -14,6 +14,7 @@ settings:
     global:
       normal:
         '''pa''': '''spawn --userscript password_fill'''
+        d: null
         pa: spawn --userscript password_fill
   colors.tabs.bar.bg:
     global: '#111111'
@@ -25,8 +26,11 @@ settings:
     global: '#111111'
   colors.tabs.selected.odd.bg:
     global: '#111111'
+  content.blocking.method:
+    global: adblock
   content.notifications:
     https://www.netflix.com: false
+    https://www.reddit.com: false
     https://www.youtube.com: false
   content.register_protocol_handler:
     https://mail.google.com?extsrc=mailto&url=%25s: true
