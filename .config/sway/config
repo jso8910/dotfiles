@@ -228,10 +228,10 @@ exec_always {
     gsettings set $gnome-schema font-name 'Sans Serif,  10'
 }
 
-bindsym $mod+Shift+minus exec swaylock --screenshots --clock --indicator --effect-blur 50000x50 --fade-in 0.5;  
+bindsym $mod+Shift+minus exec swaylock --clock --color 241d5e --fade-in 0.5;  
 
 exec swayidle -w \
-  timeout 3600 'swaylock --screenshots --clock --indicator --effect-blur 50000x50 --fade-in 0.5; '\
+  timeout 3600 'swaylock --clock --color 241d5e --fade-in 0.5; '\
   timeout 3600 'swaymsg "output * dpms off"' \
   resume 'swaymsg "output * dpms on"' \
   after-resume 'swaylock --screenshots --clock --indicator --effect-blur 50000x50 --fade-in 0.5;'

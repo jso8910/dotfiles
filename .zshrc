@@ -27,10 +27,12 @@ export EDITOR=vim
 bindkey '\e[OH' beginning-of-line
 bindkey '\e[OF' end-of-line
 
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+if [ ! "$TERM" = "linux" ]; then
+    source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+fi
 PATH=~/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/tools:/opt/android-sdk/tools/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/jason/.local/bin:/var/lib/snapd/snap/bin
 alias size="du -sh"
 alias sudo="sudo "
@@ -196,3 +198,29 @@ export USE_CCACHE=1
 source /usr/share/nvm/nvm.sh
 source /usr/share/nvm/bash_completion
 source /usr/share/nvm/install-nvm-exec
+
+# CS50 STUFF FEEL FREE TO REMOVE IDK
+# configure clang
+#export CC=clang
+#export CFLAGS="-fsanitize=integer -fsanitize=undefined -ggdb3 -O0 -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wshadow"
+#export LDLIBS="-lcrypt -lcs50 -lm"
+if [ "$TERM" = "linux" ]; then
+    echo -en "\e]P0232323" #black
+    echo -en "\e]P82B2B2B" #darkgrey
+    echo -en "\e]P1D75F5F" #darkred
+    echo -en "\e]P9E33636" #red
+    echo -en "\e]P287AF5F" #darkgreen
+    echo -en "\e]PA98E34D" #green
+    echo -en "\e]P3D7AF87" #brown
+    echo -en "\e]PBFFD75F" #yellow
+    echo -en "\e]P48787AF" #darkblue
+    echo -en "\e]PC7373C9" #blue
+    echo -en "\e]P5BD53A5" #darkmagenta
+    echo -en "\e]PDD633B2" #magenta
+    echo -en "\e]P65FAFAF" #darkcyan
+    echo -en "\e]PE44C9C9" #cyan
+    echo -en "\e]P7E5E5E5" #lightgrey
+    echo -en "\e]PFFFFFFF" #white
+    clear #for background artifacting
+fi
+

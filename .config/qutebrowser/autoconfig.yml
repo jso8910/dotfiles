@@ -6,6 +6,14 @@
 
 config_version: 2
 settings:
+  aliases:
+    global:
+      paywall: open https://www.google.com/search?q=cache:{url}
+      q: close
+      qa: quit
+      w: session-save
+      wq: quit --save
+      wqa: quit --save
   auto_save.interval:
     global: 60000
   auto_save.session:
@@ -14,6 +22,8 @@ settings:
     global:
       normal:
         '''pa''': '''spawn --userscript password_fill'''
+        <Ctrl+q>: null
+        ZQ: null
         d: null
         pa: spawn --userscript password_fill
   colors.tabs.bar.bg:
@@ -28,7 +38,12 @@ settings:
     global: '#111111'
   content.blocking.method:
     global: adblock
-  content.notifications:
+  content.dns_prefetch:
+    global: true
+  content.mouse_lock:
+    https://ajrbrothers.com: true
+  content.notifications.enabled:
+    https://www.javatpoint.com: false
     https://www.netflix.com: false
     https://www.reddit.com: false
     https://www.youtube.com: false
