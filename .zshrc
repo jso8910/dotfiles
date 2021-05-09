@@ -224,3 +224,6 @@ if [ "$TERM" = "linux" ]; then
     clear #for background artifacting
 fi
 
+TIMEFMT=$'\n================\nCPU\t%P\nuser\t%*U\nsystem\t%*S\ntotal\t%*E'
+
+alias openaurkey="ssh-add ~/.ssh/aur"
