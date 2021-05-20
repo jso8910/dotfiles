@@ -40,6 +40,12 @@ settings:
     global: adblock
   content.dns_prefetch:
     global: true
+  content.media.audio_capture:
+    https://meet.google.com: true
+  content.media.audio_video_capture:
+    https://meet.google.com: true
+  content.media.video_capture:
+    https://meet.google.com: true
   content.mouse_lock:
     https://ajrbrothers.com: true
   content.notifications.enabled:

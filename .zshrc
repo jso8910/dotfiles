@@ -32,6 +32,8 @@ if [ ! "$TERM" = "linux" ]; then
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 PATH=~/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/tools:/opt/android-sdk/tools/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/jason/.local/bin:/var/lib/snapd/snap/bin
 alias size="du -sh"
@@ -48,7 +50,6 @@ export EDITOR=nvim
 alias swayconfig="nvim ~/.config/sway/config"
 alias obs="QT_QPA_PLATFORM=xcb obs"
 alias record='wf-recorder -g "$(slurp)" -f recording-$(date +"%Y-%m-%d_%H.%M.%S").mp4'
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 bindkey "^E" autosuggest-accept
 bindkey "^ " autosuggest-execute
@@ -199,11 +200,6 @@ source /usr/share/nvm/nvm.sh
 source /usr/share/nvm/bash_completion
 source /usr/share/nvm/install-nvm-exec
 
-# CS50 STUFF FEEL FREE TO REMOVE IDK
-# configure clang
-#export CC=clang
-#export CFLAGS="-fsanitize=integer -fsanitize=undefined -ggdb3 -O0 -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wshadow"
-#export LDLIBS="-lcrypt -lcs50 -lm"
 if [ "$TERM" = "linux" ]; then
     echo -en "\e]P0232323" #black
     echo -en "\e]P82B2B2B" #darkgrey
@@ -227,3 +223,10 @@ fi
 TIMEFMT=$'\n================\nCPU\t%P\nuser\t%*U\nsystem\t%*S\ntotal\t%*E'
 
 alias openaurkey="ssh-add ~/.ssh/aur"
+parufind() {
+    paru -Sl | awk '{print $2($4=="" ? "" : " *")}' | sk --multi --preview 'paru -Si {1}' | cut -d " " -f 1 | xargs -ro paru -S
+}
+
+histfind() {
+    cmd=$(history | fzf --multi) && echo $cmd && eval $cmd && unset cmd
+}
