@@ -40,7 +40,7 @@ alias size="du -sh"
 alias sudo="sudo "
 alias offline='unshare -r -n'
 alias dir='dir --color=auto'
-alias ls='ls --color=auto'
+alias ls='exa --color=always --group-directories-first --icons'
 alias vim='nvim'
 setopt AUTO_CD
 alias yay="paru"
@@ -131,29 +131,8 @@ updateLinuxLogoStart() {
   asp checkout linux
   cd linux
   cd trunk
-  cp config config.new
-  cp ~/build/linux-logo/config.patch config.old
-  echo "Apply changes from config.old to config.new and then run second part"
-  sleep 2
-  vim '+edit config.old' '+vsplit' '+edit config.new'
+  git show
 }
-
-updateLinuxLogoEnd() {
-  cd ~/build/linux/trunk
-  diff --unified --recursive --text --strip config config.new > config.patch
-  echo "Check on the diff"
-  echo "Make sure the change the file names to a/.config and b/.config"
-  sleep 3
-  vim config.patch
-  echo "Sleeping.... ctrl c if diff isn't correct"
-  sleep 5
-  cp config.patch ~/build/linux-logo/config.patch
-  cp config ~/build/linux-logo/config
-  echo "Review changes from commit and make them manually. Make sure you check what file they are in (disregard anything not in trunk/)"
-  sleep 3
-  git show 
-}
-
 
 updateLinuxLogoLTSStart() {
   cd ~/build
@@ -162,28 +141,7 @@ updateLinuxLogoLTSStart() {
   asp checkout linux-lts
   cd linux-lts
   cd trunk
-  cp config config.new
-  cp ~/build/linux-lts-logo/config.patch config.old
-  echo "Apply changes from config.old to config.new and then run second part"
-  sleep 2
-  vim '+edit config.old' '+vsplit' '+edit config.new'
-}
-
-updateLinuxLogoLTSEnd() {
-  cd ~/build/linux-lts/trunk
-  diff --unified --recursive --text --strip config config.new > config.patch
-  echo "Check on the diff"
-  echo "Make sure the change the file names to a/.config and b/.config"
-  sleep 3
-  vim config.patch
-  echo "Sleeping.... ctrl c if diff isn't correct"
-  sleep 5
-  cp config.patch ~/build/linux-lts-logo/config.patch
-  cp config ~/build/linux-lts-logo/config
-  
-  echo "Review changes from commit and make them manually. Make sure you check what file they are in (disregard anything not in trunk/)"
-  sleep 3
-  git show 
+  git show
 }
 
 updateAurPackage() {
@@ -229,4 +187,9 @@ parufind() {
 
 histfind() {
     cmd=$(history | fzf --multi) && echo $cmd && eval $cmd && unset cmd
+}
+setopt HIST_FIND_NO_DUPS
+
+help() {
+    $(fc -ln -1 | head -n1 | awk '{print $1;}') -h
 }

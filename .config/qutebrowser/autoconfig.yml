@@ -23,9 +23,17 @@ settings:
       normal:
         '''pa''': '''spawn --userscript password_fill'''
         <Ctrl+q>: null
+        <shift: + 1> open -t
         ZQ: null
         d: null
         pa: spawn --userscript password_fill
+        zl: spawn --userscript localhost
+  colors.hints.fg:
+    global: white
+  colors.keyhint.fg:
+    global: white
+  colors.messages.info.fg:
+    global: white
   colors.tabs.bar.bg:
     global: '#111111'
   colors.tabs.even.bg:
@@ -36,19 +44,27 @@ settings:
     global: '#111111'
   colors.tabs.selected.odd.bg:
     global: '#111111'
+  content.blocking.enabled:
+    global: true
   content.blocking.method:
     global: adblock
+  content.desktop_capture:
+    https://meet.google.com: true
+    https://mozilla.github.io: true
   content.dns_prefetch:
     global: true
   content.media.audio_capture:
     https://meet.google.com: true
   content.media.audio_video_capture:
+    https://flipgrid.com: true
     https://meet.google.com: true
   content.media.video_capture:
     https://meet.google.com: true
   content.mouse_lock:
     https://ajrbrothers.com: true
   content.notifications.enabled:
+    https://gunyangseamus.cam: false
+    https://meet.google.com: false
     https://www.javatpoint.com: false
     https://www.netflix.com: false
     https://www.reddit.com: false
@@ -57,12 +73,18 @@ settings:
     https://mail.google.com?extsrc=mailto&url=%25s: true
   content.user_stylesheets:
     global: []
+  fonts.default_family:
+    global: mono
   qt.args:
     global:
     - ignore-gpu-blocklist
     - enable-gpu-rasterization
     - enable-native-gpu-memory-buffers
     - num-raster-threads=4
+  qt.highdpi:
+    global: false
+  statusbar.show:
+    global: always
   tabs.padding:
     global:
       bottom: 3

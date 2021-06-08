@@ -181,7 +181,8 @@ for_window [class=".*"] border pixel 0
 exec --no-startup-id i3 border pixel 2 
 gaps inner 8
 gaps outer 8 
-#exec_always swaybg -i ~/Pictures/Wallpapers/wallpaper.png
+gaps top 2
+exec_always swaybg -m fill -i ~/Pictures/Wallpapers/wallpaper.png
 
 # Next/previous workspace
 bindsym Mod1+Right workspace next
@@ -227,13 +228,12 @@ exec_always {
     gsettings set $gnome-schema font-name 'Sans Serif,  10'
 }
 
-bindsym $mod+Shift+minus exec swaylock --clock --color 241d5e --fade-in 0.5;  
-
+bindsym $mod+Shift+minus exec swaylock --clock -i ~/Pictures/Wallpapers/blur.png --fade-in 0.5
 exec swayidle -w \
-  timeout 3600 'swaylock --clock --color 241d5e --fade-in 0.5; '\
+  timeout 3600 'swaylock --clock -i ~/Pictures/Wallpapers/blur.png --fade-in 0.5; '\
   timeout 3600 'swaymsg "output * dpms off"' \
   resume 'swaymsg "output * dpms on"' \
-  after-resume 'swaylock --screenshots --clock --indicator --effect-blur 50000x50 --fade-in 0.5;'
+  after-resume 'swaylock --clock -i ~/Pictures/Wallpapers/blur.png --fade-in 0.5;'
 
 
 exec mako
@@ -249,8 +249,8 @@ bindsym Print+Ctrl  exec grimshot copy window
 bindsym $mod+Shift+f floating toggle
 
 exec export _JAVA_AWT_WM_NONREPARENTING=1
-exec_always ~/sunpaper/sunpaper.sh -c
-exec_always ~/sunpaper/sunpaper.sh
+#exec_always ~/sunpaper/sunpaper.sh -c
+#exec_always ~/sunpaper/sunpaper.sh
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 input type:keyboard {
@@ -261,3 +261,4 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioPlay exec playerctl play
 
 exec mpd_discord_richpresence
+exec persway -a
