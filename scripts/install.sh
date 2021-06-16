@@ -44,12 +44,6 @@ install_pkg qutebrowser pass pass-import qt5-webengine-widevine qt5-wayland qt5-
 print 'Installing swaywm'
 install_pkg sway
 
-#print 'Installing ly and enabling'
-#install_pkg ly 
-#sudo systemctl disable display-manager
-#sudo systemctl enable ly 
-
-
 print 'Installing python3 and pip' 
 install_pkg python python-pip
 
@@ -71,14 +65,11 @@ install_pkg bottom-bin tldr light i3-volume mako swaybg mopidy ncmpcpp swayidle 
 print 'Installing rofi'
 install_pkg rofi-lbonn-wayland-git 
 
-print 'Installing foot'
-install_pkg foot
+print 'Installing kitty'
+install_pkg kitty 
 
 print 'Installing waybar'
 install_pkg waybar
-
-print 'Installing sunpaper'
-git clone https://github.com/hexive/sunpaper.git ~/sunpaper
 
 print 'Installing p10k and zsh-autosuggestions'
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
@@ -89,8 +80,6 @@ install_pkg kernel-modules-hook
 sudo systemctl daemon-reload 
 sudo systemctl enable --now linux-modules-cleanup
 
-print 'I hate ttf-dejavu so in case it installed'
-paru -Rsu ttf-dejavu --noconfirm
 print 'Installing yadm'
 install_pkg yadm
 

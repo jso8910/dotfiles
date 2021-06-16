@@ -44,10 +44,24 @@ settings:
     global: '#111111'
   colors.tabs.selected.odd.bg:
     global: '#111111'
+  colors.webpage.darkmode.enabled:
+    global: false
+  colors.webpage.preferred_color_scheme:
+    global: dark
+  content.blocking.adblock.lists:
+    global:
+    - https://easylist.to/easylist/easylist.txt
+    - https://easylist.to/easylist/easyprivacy.txt
+    - https://easylist-downloads.adblockplus.org/easylistdutch.txt
+    - https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt
+    - https://www.i-dont-care-about-cookies.eu/abp/
+    - https://secure.fanboy.co.nz/fanboy-cookiemonster.txt
   content.blocking.enabled:
     global: true
   content.blocking.method:
     global: adblock
+  content.blocking.whitelist:
+    global: null
   content.desktop_capture:
     https://meet.google.com: true
     https://mozilla.github.io: true
@@ -63,6 +77,7 @@ settings:
   content.mouse_lock:
     https://ajrbrothers.com: true
   content.notifications.enabled:
+    https://calendar.google.com: false
     https://gunyangseamus.cam: false
     https://meet.google.com: false
     https://www.javatpoint.com: false
@@ -73,6 +88,12 @@ settings:
     https://mail.google.com?extsrc=mailto&url=%25s: true
   content.user_stylesheets:
     global: []
+  editor.command:
+    global:
+    - kitty
+    - nvim
+    - '{}'
+    - +call cursor({line}, {column})
   fonts.default_family:
     global: mono
   qt.args:
