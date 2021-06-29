@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+tsp -l | sed -e 's/--no-ytdl.*//' | sed 's/\/usr\/bin\/mpv.*--force-media-//g'

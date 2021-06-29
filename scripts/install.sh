@@ -84,7 +84,7 @@ print 'Installing yadm'
 install_pkg yadm
 
 print 'Youtube stuff'
-install_pkg youtube-viewer mpv 
+install_pkg youtube-viewer mpv task-spooler 
 
 print 'Doing this last for courtesy, may take a while, might not work, but installing nerd-fonts-complete. If it works, feel free to rm -rf ~/.fonts/fonts/nerd-fonts-complete'
 install_pkg nerd-fonts-complete
