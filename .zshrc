@@ -193,3 +193,5 @@ setopt HIST_FIND_NO_DUPS
 help() {
     $(fc -ln -1 | head -n1 | awk '{print $1;}') -h
 }
+
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'

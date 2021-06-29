@@ -61,7 +61,10 @@ settings:
   content.blocking.method:
     global: adblock
   content.blocking.whitelist:
-    global: null
+    global:
+    - blog.arrowos.net
+    - youtube.com
+    - disneyplus.com
   content.desktop_capture:
     https://meet.google.com: true
     https://mozilla.github.io: true
