@@ -2,3 +2,8 @@
 	path = startpage
 	url = https://github.com/jso8910/startpage
 	branch = main
+
+[submodule "draculaQute"]
+    path = .config/qutebrowser/dracula
+    url = https://github.com/dracula/qutebrowser
+    branch = master

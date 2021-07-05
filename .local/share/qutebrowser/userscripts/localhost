@@ -1,0 +1,119 @@
+#!/usr/bin/env python3
+"""
+A userscript to display all things running on localhost.
+Either that or to open up a localhost given a port as input.
+"""
+import os
+from shlex import join
+import psutil
+from jinja2 import Template
+
+
+def send_cmd(command):
+    """
+    Sends command to qutebrowser.
+    """
+    fifo = str(os.environ.get('QUTE_FIFO'))
+    with open(fifo, 'w') as out_file:
+        out_file.write('{}\n'.format(command))
+
+
+def remove_duplicate_ports(ports):
+    """
+    Removes duplicate ports given an input of a list of dicts.
+    """
+    used_vals = set()
+    n_list = []
+    for port in ports:
+        if port['number'] not in used_vals:
+            n_list.append(port)
+            used_vals.add(port['number'])
+
+    return n_list
+
+
+def main():
+    """
+    Main function.
+    """
+    tmpfile = os.path.join(
+        os.environ.get('QUTE_DATA_DIR',
+                       os.path.expanduser('~/.local/share/qutebrowser')),
+        'userscripts/localhost.html')
+
+    if not os.path.exists(os.path.dirname(tmpfile)):
+        os.makedirs(os.path.dirname(tmpfile))
+
+    html = """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>localhost open ports</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <style>
+            body {
+                background-color: #151515;
+                color: white;
+            }
+
+            a {
+                color: white;
+                font-weight: bold;
+                text-decoration: none;
+            }
+
+            code {
+                background-color: #515151;
+            }
+
+            .item {
+                border-radius: 10px;
+                margin: 10px;
+                padding: 5px;
+                background-color: #313131;
+            }
+
+            .item:hover {
+                background-color: #414141;
+            }
+        </style>
+    </head>
+    <body>
+    {% for port in ports %}
+    <a href="http://localhost:{{ port.number }}" target="_blank">
+        <div class='item'>
+            <p>Port: {{ port.number }}</p>
+            <p>Command: <code>{{ port.title }}</code></p>
+        </div>
+    </a>
+    {% endfor %}
+    </body>
+    """
+    ports = []
+
+    connections = psutil.net_connections()
+    current_process_cmdline = join(psutil.Process(os.getpid()).cmdline())
+    for con in connections:
+        title = join(psutil.Process(con.pid).cmdline())
+        if (con.status == psutil.CONN_LISTEN and
+                current_process_cmdline != title):
+            if con.raddr != tuple():
+                ports.append({"number": con.raddr.port, "title": title})
+            if con.laddr != tuple():
+                ports.append({"number": con.laddr.port, "title": title})
+
+    ports.sort(key=lambda port: port['number'])
+    ports = remove_duplicate_ports(ports)
+
+    Template(html).stream(ports=ports).dump(tmpfile)
+
+    command = 'open -t {}'.format(tmpfile)
+    send_cmd(command)
+
+
+if __name__ == '__main__':
+    if not os.environ.get('QUTE_COUNT', None):
+        main()
+    else:
+        send_cmd('open -t localhost:{}'.format(os.environ['QUTE_COUNT']))
