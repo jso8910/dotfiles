@@ -50,6 +50,7 @@ if dein#load_state('/home/jason/.local/share/vim')
 
   call dein#add('Raimondi/delimitMate')
   " Add or remove your plugins here like this:
+  call dein#add('vimwiki/vimwiki')
   "call dein#add('Shougo/neosnippet.vim')
   "call dein#add('Shougo/neosnippet-snippets')
 
@@ -70,3 +71,12 @@ endif
 
 "End dein Scripts-------------------------
 "call deoplete#enable()
+
+call plug#begin(stdpath('data') . '/plugged')
+    Plug 'vimwiki/vimwiki'
+call plug#end()
+
+
+let g:vimwiki_list = [{'path': '$HOME/vimwiki/',                                
+                     \ 'auto_diary_index': 1, 'auto_generate_links': 1,          
+                     \ }]

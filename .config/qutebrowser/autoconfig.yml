@@ -116,7 +116,7 @@ settings:
       right: 5
       top: 3
   url.default_page:
-    global: https://www.google.com
+    global: file:///home/jason/startpage/index.html
   url.searchengines:
     global:
       DEFAULT: https://www.google.com/search?q={}
