@@ -50,6 +50,7 @@ install_pkg python python-pip
 print 'Installing nvim'
 install_pkg neovim
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+chmod +x installer.sh
 sh installer.sh ~/.local/share/vim
 pip install --user --upgrade pynvim
 
