@@ -53,6 +53,8 @@ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh >
 chmod +x installer.sh
 sh installer.sh ~/.local/share/vim
 pip install --user --upgrade pynvim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 print 'Installing vlc'
 install_pkg vlc
@@ -61,7 +63,7 @@ print 'Installing coding stuff'
 install_pkg code code-marketplace jetbrains-toolbox
 
 print 'Installing misc stuff'
-install_pkg bottom-bin tldr light i3-volume mako swaybg mopidy ncmpcpp swayidle swaylock-effects-git grimshot xorg-xwayland thefuck sunwait wallutils wl-clipboard libnotify
+install_pkg bottom-bin tldr light i3-volume mako swaybg mopidy ncmpcpp swayidle swaylock-effects-git grimshot xorg-xwayland thefuck sunwait wallutils wl-clipboard libnotify exa nodejs
 
 print 'Installing rofi'
 install_pkg rofi-lbonn-wayland-git 
