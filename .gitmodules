@@ -5,5 +5,5 @@
 
 [submodule "draculaQute"]
     path = .config/qutebrowser/dracula
-    url = https://github.com/dracula/qutebrowser
+    url = https://github.com/jso8910/dracula
     branch = master
