@@ -223,10 +223,11 @@ set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
     gsettings set $gnome-schema gtk-theme 'Dracula'
-    #gsettings set $gnome-schema cursor-theme 'macOSBigSur'
+    gsettings set $gnome-schema cursor-theme 'Bibata-Modern-DodgerBlue'
     gsettings set $gnome-schema cursor-theme-size '24'
     gsettings set $gnome-schema font-name 'Sans Serif,  10'
 }
+
 
 bindsym $mod+Shift+minus exec swaylock --clock -i ~/Pictures/Wallpapers/blur.png --fade-in 0.5
 exec swayidle -w \
@@ -238,10 +239,10 @@ exec swayidle -w \
 
 exec mako
 
-bindsym Print+Shift exec grimshot copy active
-bindsym Print       exec grimshot copy area
-bindsym Print+Mod1  exec grimshot copy output
-bindsym Print+Ctrl  exec grimshot copy window
+bindsym Print+Shift exec grimshot --notify copy active
+bindsym Print       exec grimshot --notify copy area
+bindsym Print+Mod1  exec grimshot --notify copy output
+bindsym Print+Ctrl  exec grimshot --notify copy window
 
 
 
@@ -264,4 +265,3 @@ exec mpd_discord_richpresence
 exec persway -a
 
 for_window [app_id="^org.qutebrowser.qutebrowser$"] inhibit_idle fullscreen
-

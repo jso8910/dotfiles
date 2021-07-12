@@ -195,3 +195,7 @@ help() {
 }
 
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+export ANDROID_SDK=$HOME/Android/Sdk
+export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$PATH
