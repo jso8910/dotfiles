@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=Game 474605546457137157
-Exec=/usr/bin/mpd_discord_richpresence %u
-Type=Application
-NoDisplay=true
-Categories=Discord;Games;
-MimeType=x-scheme-handler/discord-474605546457137157;
