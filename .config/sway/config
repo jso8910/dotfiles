@@ -208,7 +208,10 @@ input type:touchpad accel_profile adaptive
 input type:touchpad pointer_accel 0.5
 input 4152:5000:SteelSeries_SteelSeries_Kinzu_V3_Gaming_Mouse natural_scroll enabled 
 input 4152:5000:SteelSeries_SteelSeries_Kinzu_V3_Gaming_Mouse pointer_accel -0.5
-exec --no-startup-id blueman-manager 
+exec --no-startup-id blueman-manager
+exec blueman-applet
+
+exec nwg-wrapper -j center -p right -a start -s ~/scripts/lastfm.sh -r 1000
 
 
 #bindsym $mod+Ctrl+Right resize shrink width 1 px or 1 ppt
