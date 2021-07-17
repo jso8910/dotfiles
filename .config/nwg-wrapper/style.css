@@ -1,5 +1,5 @@
 window {
-        background-color: rgba (0, 0, 0, 0.0);
+    background-color: rgba (0, 0, 0, 0.0);
 }
 
 #box-outer {
@@ -8,11 +8,11 @@ window {
 }
 
 #box-inner {
-    background-color: rgba (23, 53, 63, 0.0);
+    background-color: #3b3e4f;
     border-radius: 10px;
 	border-style: dotted;
 	border-width: 1px;
-	border-color: rgba (156, 142, 122, 0.0);
+	border-color: rgba (156, 142, 122, 1.0);
 	padding: 10px;
 /*    width: 200px; */
 }
