@@ -5,7 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh_history
 HISTSIZE=9223372036854775807
@@ -182,11 +181,19 @@ TIMEFMT=$'\n================\nCPU\t%P\nuser\t%*U\nsystem\t%*S\ntotal\t%*E'
 
 alias openaurkey="ssh-add ~/.ssh/aur"
 parufind() {
-    paru -Sl | awk '{print $2($4=="" ? "" : " *")}' | sk --multi --preview 'paru -Si {1}' | cut -d " " -f 1 | xargs -ro paru -S
+    pkg=$(paru -Sl | awk '{print $2($4=="" ? "" : " *")}' | sk --multi --preview 'paru -Si {1}' | cut -d " " -f 1)
+    print -sr -- ${pkg%%$'\n'}
+    echo $pkg
+    paru -S $pkg
+    unset pkg
 }
 
 histfind() {
-    cmd=$(history | fzf --multi) && echo $cmd && eval $cmd && unset cmd
+    cmd=$(history | fzf --multi)
+    print -sr -- "${cmd%%$'\n'}"
+    echo $cmd
+    eval $cmd
+    unset cmd
 }
 setopt HIST_FIND_NO_DUPS
 
