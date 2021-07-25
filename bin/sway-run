@@ -3,9 +3,9 @@ export IDEA_JDK=/usr/lib/jvm/java-8-openjdk
 export STUDIO_JDK=/usr/lib/jvm/java-8-openjdk 
 export TERMINAL="alacritty"
 #export QT_QPA_PLATFORM=xcb
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
-echo $SSH_AUTH_SOCK
+#eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+#export SSH_AUTH_SOCK
+#echo $SSH_AUTH_SOCK
 QT_QPA_PLATFORM=wayland
 #export XKB_DEFAULT_LAYOUT=us
 #export XKB_DEFAULT_VARIANT=altgr-intl
