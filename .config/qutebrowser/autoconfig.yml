@@ -108,6 +108,8 @@ settings:
     - enable-gpu-rasterization
     - enable-native-gpu-memory-buffers
     - num-raster-threads=4
+  qt.force_software_rendering:
+    global: none
   qt.highdpi:
     global: false
   statusbar.show:
