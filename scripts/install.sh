@@ -35,7 +35,7 @@ install_pkg pkgfile
 sudo pkgfile --update
 
 print 'Installing discord mopidy rich presence and other discord stuff'
-install_pkg mpd-rich-presence-discord-git powercord-git discord discord-canary powercord-git nodejs-lts-dubnium
+install_pkg powercord-git discord discord-canary powercord-git nodejs-lts-dubnium
 
 print 'Installing browsers (multiple depending on my mood)' 
 install_pkg chromium

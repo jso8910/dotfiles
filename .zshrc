@@ -182,7 +182,7 @@ TIMEFMT=$'\n================\nCPU\t%P\nuser\t%*U\nsystem\t%*S\ntotal\t%*E'
 alias openaurkey="ssh-add ~/.ssh/aur"
 parufind() {
     pkg=$(paru -Sl | awk '{print $2($4=="" ? "" : " *")}' | sk --multi --preview 'paru -Si {1}' | cut -d " " -f 1)
-    print -sr -- ${pkg%%$'\n'}
+    print -sr -- "paru -S ${pkg%%$'\n'}"
     echo $pkg
     paru -S $pkg
     unset pkg

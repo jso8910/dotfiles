@@ -263,7 +263,6 @@ input type:keyboard {
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioPlay exec playerctl play
 
-exec mpd_discord_richpresence
 exec persway -a
 
 for_window [app_id="^org.qutebrowser.qutebrowser$"] inhibit_idle fullscreen
