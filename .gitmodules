@@ -7,7 +7,10 @@
     path = .config/qutebrowser/dracula
     url = https://github.com/jso8910/dracula
     branch = master
-[submodule "/home/jason/.config/kitty/kitty-themes"]
+[submodule "kitty-themes"]
 	path = .config/kitty/kitty-themes
 	url = https://github.com/dexpota/kitty-themes
     branch = master
+[submodule "fmcord"]
+	path = fmcord
+	url = https://github.com/69/fmcord

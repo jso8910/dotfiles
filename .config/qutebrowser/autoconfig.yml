@@ -57,7 +57,7 @@ settings:
     - https://www.i-dont-care-about-cookies.eu/abp/
     - https://secure.fanboy.co.nz/fanboy-cookiemonster.txt
   content.blocking.enabled:
-    global: true
+    global: false
   content.blocking.method:
     global: adblock
   content.blocking.whitelist:
@@ -83,9 +83,14 @@ settings:
   content.mouse_lock:
     https://ajrbrothers.com: true
   content.notifications.enabled:
+    https://analyticsindiamag.com: false
     https://calendar.google.com: false
+    https://colab.research.google.com: false
     https://gunyangseamus.cam: false
+    https://kissjav.com: false
     https://meet.google.com: false
+    https://www.analyticsvidhya.com: false
+    https://www.indiatoday.in: false
     https://www.javatpoint.com: false
     https://www.netflix.com: false
     https://www.reddit.com: false

@@ -1,9 +1,13 @@
+eval ssh-agent
 export _JAVA_AWT_WM_NONREPARENTING=1 
 export IDEA_JDK=/usr/lib/jvm/java-8-openjdk 
 export STUDIO_JDK=/usr/lib/jvm/java-8-openjdk 
 export TERMINAL="alacritty"
 #export QT_QPA_PLATFORM=xcb
 #eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+eval $(gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
+#eval $(/usr/bin/gnome-keyring-daemon --daemonize)
 #export SSH_AUTH_SOCK
 #echo $SSH_AUTH_SOCK
 QT_QPA_PLATFORM=wayland
@@ -12,4 +16,5 @@ QT_QPA_PLATFORM=wayland
 export MOZ_ENABLE_WAYLAND=1
 #export XKB_DEFAULT_OPTIONS=compose:rctrl
 #export XKB_DEFAULT_OPTIONS=compose:menu,level3:rctrl_switch
+dbus-update-activation-environment --systemd DISPLAY
 sway

@@ -1,0 +1,3 @@
+pushd ~/fmcord
+    node app.js
+popd

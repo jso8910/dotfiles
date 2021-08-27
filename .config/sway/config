@@ -266,3 +266,4 @@ bindsym XF86AudioPlay exec playerctl play
 exec persway -a
 
 for_window [app_id="^org.qutebrowser.qutebrowser$"] inhibit_idle fullscreen
+exec discordrpc
