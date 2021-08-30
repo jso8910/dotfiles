@@ -216,4 +216,3 @@ fi
 export PATH=~/.pyenv/shims:$PATH
 precmd () {print -Pn "\e]0;%~\a"}
 source $HOME/.cargo/env
-
