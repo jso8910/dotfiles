@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
 
-
+print "Make sure to edit ~/fmcord/config.json (copy config.json.example there first) with your lastfm username"
 print "If you aren't on arch, change the install commands and everything"
 print 'Warning!!!! THIS WILL DELETE ALL CONFIGS YOU HAVE FOR SWAY, WAYBAR, ALACRITTY, NVIM, ROFI, AND ZSH ALONG WITH YOUR ~/.fonts FOLDER.'
 print -n "Note: This script requires you having access to sudo. Continue? [y/N]: $(tput sgr0)" && read -k1 && print
