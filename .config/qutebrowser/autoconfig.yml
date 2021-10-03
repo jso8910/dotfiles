@@ -44,6 +44,8 @@ settings:
     global: '#111111'
   colors.tabs.selected.odd.bg:
     global: '#111111'
+  colors.webpage.bg:
+    global: white
   colors.webpage.darkmode.enabled:
     global: false
   colors.webpage.preferred_color_scheme:
@@ -73,6 +75,8 @@ settings:
   content.headers.user_agent:
     global: Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko)
       {qt_key}/{qt_version} {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}
+  content.javascript.enabled:
+    '*://*.contacts.google.com/*': true
   content.media.audio_capture:
     https://meet.google.com: true
   content.media.audio_video_capture:
@@ -82,18 +86,23 @@ settings:
     https://meet.google.com: true
   content.mouse_lock:
     https://ajrbrothers.com: true
+    https://www.figma.com: true
   content.notifications.enabled:
     https://analyticsindiamag.com: false
     https://calendar.google.com: false
     https://colab.research.google.com: false
     https://gunyangseamus.cam: false
+    https://igg-games.com: false
     https://kissjav.com: false
     https://meet.google.com: false
     https://www.analyticsvidhya.com: false
+    https://www.hrkgame.com: false
     https://www.indiatoday.in: false
     https://www.javatpoint.com: false
     https://www.netflix.com: false
     https://www.reddit.com: false
+    https://www.tiktok.com: false
+    https://www.usatoday.com: false
     https://www.youtube.com: false
   content.register_protocol_handler:
     https://mail.google.com?extsrc=mailto&url=%25s: true

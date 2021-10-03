@@ -267,3 +267,7 @@ exec persway -a
 
 for_window [app_id="^org.qutebrowser.qutebrowser$"] inhibit_idle fullscreen
 exec discordrpc
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
