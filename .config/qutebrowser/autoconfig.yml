@@ -89,6 +89,8 @@ settings:
     https://www.figma.com: true
   content.notifications.enabled:
     https://analyticsindiamag.com: false
+    https://anybunny.tv: false
+    https://bleedingcool.com: false
     https://calendar.google.com: false
     https://colab.research.google.com: false
     https://gunyangseamus.cam: false
@@ -104,7 +106,10 @@ settings:
     https://www.tiktok.com: false
     https://www.usatoday.com: false
     https://www.youtube.com: false
+  content.proxy:
+    global: system
   content.register_protocol_handler:
+    https://calendar.google.com?cid=%25s: false
     https://mail.google.com?extsrc=mailto&url=%25s: true
   content.user_stylesheets:
     global: []
